@@ -16,9 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		configAppearance()
 		return true
 	}
-
+	func configAppearance() {
+		let pageControl = UIPageControl.appearance()
+		pageControl.pageIndicatorTintColor = ColorPalette.Accent
+		pageControl.currentPageIndicatorTintColor = ColorPalette.DarkAccent
+		pageControl.backgroundColor = UIColor.clear
+		UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textAlignment = .right
+		UITabBar.appearance().tintColor = ColorPalette.Accent
+		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName : AppFont.withSize(Dimensions.TextTiny)], for: UIControlState())
+		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
+		UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
+		
+		UILabel.appearance().defaultFont = AppFont.font()
+		UITextField.appearance().defaultFont = AppFont.font()
+		UITextView.appearance().defaultFont = AppFont.font()
+		
+		AppDelegate.changeLang()
+	}
+	static func changeLang() {
+		let targetLang = UserDefaults.standard.object(forKey: "selectedLanguage") as? String
+		IOSUtil.lang = targetLang ?? "Base"
+		Bundle.setLanguage(IOSUtil.lang)
+	}
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
