@@ -15,6 +15,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.delegate = self
+		self.selectedIndex = 3
 		imagePickerUtil.onPicSaved = {(path) in
 			if self.newSegue {
 				self.performSegue(withIdentifier: "NewSegue", sender: URL(fileURLWithPath: path as! String))

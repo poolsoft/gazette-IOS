@@ -236,7 +236,7 @@ class IOSUtil: NSObject {
 		return nil
 	}
 	
-	static func alertInput(_ what: String, controller: UIViewController, link: NSURL? = nil, range: NSRange? = nil, linkTap: UITapGestureRecognizer? = nil, okHandler: ((UIAlertAction, UITextField) -> Void)?, onCancelHandler: ((UIAlertAction) -> Void)?) {
+	static func alertInput(_ what: String, controller: UIViewController, okHandler: ((UIAlertAction, UITextField) -> Void)?, onCancelHandler: ((UIAlertAction) -> Void)?) {
 		let alert = UIAlertController(title: "", message: what, preferredStyle: UIAlertControllerStyle.alert)
 		alert.addTextField { (textField) in
 			textField.font = AppFont.withSize(Dimensions.TextSmall)
@@ -251,17 +251,7 @@ class IOSUtil: NSObject {
 				NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.body),
 				NSForegroundColorAttributeName : UIColor.black
 			]
-		)
-		
-		if link != nil && range != nil && linkTap != nil {
-			messageText.addAttribute(NSLinkAttributeName, value: link!, range: range!)
-			messageText.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.Accent, range: range!)
-			let label = getUILable(view: alert.view)
-			label?.isUserInteractionEnabled = true
-			label?.addGestureRecognizer(linkTap!)
-			
-		}
-		
+		)						
 		
 		alert.setValue(messageText, forKey: "attributedMessage")
 		

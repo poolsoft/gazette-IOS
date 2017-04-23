@@ -28,8 +28,7 @@
 		845A8E221EAB5C850006E5FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E211EAB5C850006E5FF /* HomeViewController.swift */; };
 		845A8E241EAB5C980006E5FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E231EAB5C980006E5FF /* ProfileViewController.swift */; };
 		845A8E261EAB5CA90006E5FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E251EAB5CA90006E5FF /* MainViewController.swift */; };
-		845A8E281EAB5CC40006E5FF /* SignupStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E271EAB5CC40006E5FF /* SignupStep1ViewController.swift */; };
-		845A8E2A1EAB5CCE0006E5FF /* SignupStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E291EAB5CCE0006E5FF /* SignupStep2ViewController.swift */; };
+		845A8E281EAB5CC40006E5FF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E271EAB5CC40006E5FF /* SignupViewController.swift */; };
 		845A8E2C1EAB5D910006E5FF /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E2B1EAB5D910006E5FF /* Dao.swift */; };
 		845A8E2F1EAB5DB10006E5FF /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E2E1EAB5DB10006E5FF /* BaseEntity.swift */; };
 		845A8E311EAB5E250006E5FF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8E301EAB5E250006E5FF /* Transaction.swift */; };
@@ -49,6 +48,14 @@
 		846609751EAB8E0E00FD532F /* ValidatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609741EAB8E0E00FD532F /* ValidatePresenter.swift */; };
 		846609771EAB8E1700FD532F /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609761EAB8E1700FD532F /* SignupPresenter.swift */; };
 		846609791EAB970400FD532F /* CryptoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609781EAB970400FD532F /* CryptoUtil.swift */; };
+		847D4A6C1EACAA9100766FA2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */; };
+		847D4A6E1EACB69300766FA2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6D1EACB69300766FA2 /* Events.swift */; };
+		847D4A701EACB93C00766FA2 /* LastTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */; };
+		8499153B1EAC7BED000510B3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153A1EAC7BED000510B3 /* ShareViewController.swift */; };
+		8499153D1EAC7BF9000510B3 /* SharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153C1EAC7BF9000510B3 /* SharePresenter.swift */; };
+		8499153F1EAC954E000510B3 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */; };
+		849915411EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		849915431EAC995A000510B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849915421EAC995A000510B3 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +84,7 @@
 		845A8E211EAB5C850006E5FF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		845A8E231EAB5C980006E5FF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		845A8E251EAB5CA90006E5FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		845A8E271EAB5CC40006E5FF /* SignupStep1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupStep1ViewController.swift; sourceTree = "<group>"; };
-		845A8E291EAB5CCE0006E5FF /* SignupStep2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupStep2ViewController.swift; sourceTree = "<group>"; };
+		845A8E271EAB5CC40006E5FF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		845A8E2B1EAB5D910006E5FF /* Dao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dao.swift; path = Base/Dao.swift; sourceTree = "<group>"; };
 		845A8E2E1EAB5DB10006E5FF /* BaseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseEntity.swift; path = Base/BaseEntity.swift; sourceTree = "<group>"; };
 		845A8E301EAB5E250006E5FF /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Entities/Transaction.swift; sourceTree = "<group>"; };
@@ -100,6 +106,14 @@
 		846609741EAB8E0E00FD532F /* ValidatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatePresenter.swift; sourceTree = "<group>"; };
 		846609761EAB8E1700FD532F /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		846609781EAB970400FD532F /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtil.swift; sourceTree = "<group>"; };
+		847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		847D4A6D1EACB69300766FA2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastTutorialViewController.swift; sourceTree = "<group>"; };
+		8499153A1EAC7BED000510B3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		8499153C1EAC7BF9000510B3 /* SharePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenter.swift; sourceTree = "<group>"; };
+		8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		849915421EAC995A000510B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A76517C4826A74D91F67A32D /* Pods-gazette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazette.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazette/Pods-gazette.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +140,8 @@
 				845A8E0D1EAB3A8D0006E5FF /* PhoneUtil.swift */,
 				845A8E0F1EAB3AAF0006E5FF /* ContactsProvider.swift */,
 				846609781EAB970400FD532F /* CryptoUtil.swift */,
+				8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */,
+				849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -148,8 +164,11 @@
 				845A8E211EAB5C850006E5FF /* HomeViewController.swift */,
 				845A8E231EAB5C980006E5FF /* ProfileViewController.swift */,
 				845A8E251EAB5CA90006E5FF /* MainViewController.swift */,
-				845A8E271EAB5CC40006E5FF /* SignupStep1ViewController.swift */,
-				845A8E291EAB5CCE0006E5FF /* SignupStep2ViewController.swift */,
+				845A8E271EAB5CC40006E5FF /* SignupViewController.swift */,
+				8499153A1EAC7BED000510B3 /* ShareViewController.swift */,
+				849915421EAC995A000510B3 /* EditProfileViewController.swift */,
+				847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */,
+				847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -207,6 +226,7 @@
 				846609721EAB8DF800FD532F /* ProfilePresenter.swift */,
 				846609741EAB8E0E00FD532F /* ValidatePresenter.swift */,
 				846609761EAB8E1700FD532F /* SignupPresenter.swift */,
+				8499153C1EAC7BF9000510B3 /* SharePresenter.swift */,
 			);
 			name = PresenterLayer;
 			sourceTree = "<group>";
@@ -245,6 +265,7 @@
 				845A8E111EAB3E0F0006E5FF /* Pages */,
 				8466096D1EAB749200FD532F /* Components */,
 				845A8DF51EAB2EE00006E5FF /* Constants.swift */,
+				847D4A6D1EACB69300766FA2 /* Events.swift */,
 				845A8E141EAB405A0006E5FF /* CurrentUser.swift */,
 				845C3F561EAB2A0C00BFD608 /* AppDelegate.swift */,
 				845C3F5A1EAB2A0C00BFD608 /* Main.storyboard */,
@@ -424,11 +445,15 @@
 			files = (
 				845A8E201EAB5B550006E5FF /* ValidateViewController.swift in Sources */,
 				845A8E3A1EAB6D940006E5FF /* Skype.swift in Sources */,
+				847D4A6C1EACAA9100766FA2 /* TutorialViewController.swift in Sources */,
 				845A8DFD1EAB321E0006E5FF /* CustomNavBar.swift in Sources */,
+				847D4A701EACB93C00766FA2 /* LastTutorialViewController.swift in Sources */,
 				845A8E311EAB5E250006E5FF /* Transaction.swift in Sources */,
 				845A8E2C1EAB5D910006E5FF /* Dao.swift in Sources */,
 				845A8E131EAB3E5A0006E5FF /* TabBarController.swift in Sources */,
 				845A8E221EAB5C850006E5FF /* HomeViewController.swift in Sources */,
+				8499153D1EAC7BF9000510B3 /* SharePresenter.swift in Sources */,
+				849915431EAC995A000510B3 /* EditProfileViewController.swift in Sources */,
 				845A8DFF1EAB32450006E5FF /* CustomNavigationItem.swift in Sources */,
 				845A8E261EAB5CA90006E5FF /* MainViewController.swift in Sources */,
 				845A8E0C1EAB3A410006E5FF /* StringUtil.swift in Sources */,
@@ -437,23 +462,26 @@
 				845C3F571EAB2A0C00BFD608 /* AppDelegate.swift in Sources */,
 				845A8DF61EAB2EE00006E5FF /* Constants.swift in Sources */,
 				845A8E101EAB3AAF0006E5FF /* ContactsProvider.swift in Sources */,
+				8499153F1EAC954E000510B3 /* SkyFloatingLabelTextField.swift in Sources */,
 				845A8E0E1EAB3A8D0006E5FF /* PhoneUtil.swift in Sources */,
 				846609771EAB8E1700FD532F /* SignupPresenter.swift in Sources */,
 				8466096F1EAB8D1D00FD532F /* MVPProtocol.swift in Sources */,
 				845A8E341EAB5F270006E5FF /* TransactionDao.swift in Sources */,
 				845A8E0A1EAB3A0D0006E5FF /* DateUtil.swift in Sources */,
+				849915411EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				846609711EAB8D9D00FD532F /* NewPresenter.swift in Sources */,
 				845A8E1B1EAB536B0006E5FF /* NSBundle+Language.m in Sources */,
 				846609791EAB970400FD532F /* CryptoUtil.swift in Sources */,
 				845A8DFA1EAB2F2E0006E5FF /* RestHelper.swift in Sources */,
-				845A8E2A1EAB5CCE0006E5FF /* SignupStep2ViewController.swift in Sources */,
 				845A8E2F1EAB5DB10006E5FF /* BaseEntity.swift in Sources */,
-				845A8E281EAB5CC40006E5FF /* SignupStep1ViewController.swift in Sources */,
+				845A8E281EAB5CC40006E5FF /* SignupViewController.swift in Sources */,
+				8499153B1EAC7BED000510B3 /* ShareViewController.swift in Sources */,
 				845A8E1E1EAB5B3B0006E5FF /* NewViewController.swift in Sources */,
 				846609731EAB8DF800FD532F /* ProfilePresenter.swift in Sources */,
 				845A8E3E1EAB70E90006E5FF /* HomePresenter.swift in Sources */,
 				845A8E151EAB405A0006E5FF /* CurrentUser.swift in Sources */,
 				8466096C1EAB747B00FD532F /* TransactionCell.swift in Sources */,
+				847D4A6E1EACB69300766FA2 /* Events.swift in Sources */,
 				845A8E081EAB399B0006E5FF /* ImagePickerUtil.swift in Sources */,
 				846609751EAB8E0E00FD532F /* ValidatePresenter.swift in Sources */,
 				845A8E391EAB6D940006E5FF /* ActionData.swift in Sources */,

@@ -16,6 +16,15 @@ class CurrentUser: NSObject {
 	static var username: String {
 		return keychain.get("username") ?? ""
 	}
+	static var name: String {
+		return keychain.get("name") ?? ""
+	}
+	static var lastname: String {
+		return keychain.get("lastname") ?? ""
+	}
+	static var picId: String {
+		return keychain.get("picId") ?? ""
+	}
 	static var credit: Double {
 		var tmp: Double = 0
 		(keychain.getData("credit") as NSData?)?.getBytes(&tmp, length: MemoryLayout.size(ofValue: Double.self))

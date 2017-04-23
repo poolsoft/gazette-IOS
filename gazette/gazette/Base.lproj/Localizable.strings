@@ -10,3 +10,15 @@
 "Ok"="تأیید";
 "Cancel"="انصراف";
 "Search"="جستجو";
+"Signup"="عضویت";
+"Login"="ورود";
+"WantToLogin"="قبلا ثبت نام کرده‌ام";
+"WantToSignup"="می‌خواهم ثبت نام کنم";
+"Home"="خانه";
+"Profile"="پروفایل";
+"CopyTx"="کپی";
+"Share"="اشتراک ‌گذاری";
+"Delete"="حذف";
+"PasswordNotEqual"="رمز عبور یکسان نمی‌باشد";
+"FieldIsEmpty" = "فیلد نباید خالی باشد";
+"EmailIsNotValid" = "پست الکترونیکی معتبر نیست";

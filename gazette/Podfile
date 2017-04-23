@@ -11,4 +11,6 @@ pod 'ObjectMapper', '~> 2.2'
 pod 'KeychainSwift', '~> 7.0'
 pod 'RealmSwift', '~> 2.4'
 pod 'XLActionController', '~> 3.0'
+pod 'QRCode', '~> 2.0'
+pod 'ImageLoader', '~> 0.12'
 end

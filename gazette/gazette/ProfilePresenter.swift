@@ -13,4 +13,23 @@ class ProfilePresenter: PresenterProtocol {
 	required init(_ vc: ViewProtocol) {
 		self.vc = vc
 	}
+	func myName() -> String {
+		return CurrentUser.name
+	}
+	func myLastname() -> String {
+		return CurrentUser.lastname
+	}
+	func myCredit() -> Double {
+		return CurrentUser.credit
+	}
+	func myEmail() -> String {
+		return CurrentUser.username
+	}
+	func myPicUrl() -> URL {
+		return URL(fileURLWithPath: "http://google.com")
+	}
+	func editProfile(name: String, lastname: String, email: String) {
+		
+	}
+	
 }

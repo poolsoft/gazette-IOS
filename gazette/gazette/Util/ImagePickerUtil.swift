@@ -80,17 +80,16 @@ class ImagePickerUtil: NSObject, UIImagePickerControllerDelegate, UINavigationCo
 			
 			let url: URL!
 			var fileName = "image_\(Date().timeIntervalSince1970).jpg"
-			if info[UIImagePickerControllerReferenceURL] != nil {
-				url = info[UIImagePickerControllerReferenceURL] as! URL
-				let path = url.path
-				fileName = path.substring(from: path.characters.index(path.startIndex, offsetBy: 1))
-			}
-			fileName = "\(Date().timeIntervalSince1970)_\(fileName)"
+//			if info[UIImagePickerControllerReferenceURL] != nil {
+//				url = info[UIImagePickerControllerReferenceURL] as! URL
+//				fileName = url.lastPathComponent
+//			}
+			fileName = "\(fileName)"
 			let bigFileName = "big_\(fileName)"
 			
 			if attachData != nil {
-				let path = IOSUtil.getCache("images", fileName)
-				let bigPath = IOSUtil.getCache("images", bigFileName)
+				let path = IOSUtil.getCache("images", fileName, deleteIfExist: true)
+				let bigPath = IOSUtil.getCache("images", bigFileName, deleteIfExist: true)
 				if let fileHandle = FileHandle(forWritingAtPath: path) {
 					if (onProfileSave != nil) {
 						if let bigFileHandle = FileHandle(forWritingAtPath: bigPath) {

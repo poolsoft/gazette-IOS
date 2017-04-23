@@ -52,9 +52,10 @@ struct ColorPalette {
 }
 struct Dimensions {
 	static let TextMedium = CGFloat(24)
-	static let TextLarge = CGFloat(30)
-	static let TextSmall = CGFloat(18)
-	static let TextTiny = CGFloat(14)
+	static let TextLarge = CGFloat(28)
+	static let TextSmall = CGFloat(20)
+	static let TextTiny = CGFloat(16)
+	static let TextVeryTiny = CGFloat(12)
 }
 class AppFont {
 	static let fontName = "Gandom"

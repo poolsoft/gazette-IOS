@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import XLActionController
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, ViewProtocol {
 	
 	
@@ -31,6 +31,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		
     }
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.tabBarController?.navigationItem.title = "Home".localized
+		(self.tabBarController?.navigationItem as! CustomNavigationItem).showNone()
+	}
 	func updateSearchResults(for searchController: UISearchController) {
 		let search = searchController.searchBar.text ?? ""
 		presenter?.searchTransaction(search)
@@ -62,6 +67,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		}
 		return cell
 	}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		let controller = SkypeActionController()
+		controller.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
+		controller.addAction(Action("CopyTx".localized, style: .default, handler: { (action) in
+			
+		}))
+		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
+			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.listAllTransactions()[indexPath.row])
+		}))
+		controller.addAction(Action("Delete".localized, style: .destructive, handler: { (action) in
+			
+		}))
+		controller.addAction(Action("Cancel".localized, style: .cancel, handler: { (action) in
+			
+		}))
+		present(controller, animated: true, completion: nil)
+	}
 
-   
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "ShareSegue" {
+			let controller = segue.destination as! ShareViewController
+			controller.entity = sender as! Transaction
+		}
+	}
 }

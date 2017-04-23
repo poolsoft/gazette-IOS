@@ -9,12 +9,31 @@
 import UIKit
 
 class ValidateViewController: UIViewController, ViewProtocol {
-	var path: URL?
+	
+	
+	@IBOutlet weak var filename: UILabel!
+
+	@IBOutlet weak var hashLabel: UILabel!
+	
+	@IBOutlet weak var transactionInput: UITextField!
+	
+	
+	
+	var path: URL!
 	var presenter: ValidatePresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = ValidatePresenter(self)
+		presenter?.path = path
+		reload()
     }
+	func reload() {
+		filename.text = presenter?.fileName()
+		hashLabel.text = presenter?.hash()
+	}
 
     
+	@IBAction func onTaiid(_ sender: Any) {
+		presenter?.taid(transactionInput.text ?? "")
+	}
 }

@@ -9,16 +9,16 @@
 import Foundation
 class NewPresenter: PresenterProtocol {
 	let vc: ViewProtocol
-	var path: URL? = nil
+	var path: URL!
 	fileprivate var file: FileHandle?
 	private var transactions: [Transaction]?
 	required init(_ vc: ViewProtocol) {
 		self.vc = vc
 	}
 	func getFile() -> FileHandle? {
-		if file == nil && path != nil {
+		if file == nil {
 			do {
-				file = try FileHandle(forReadingFrom: path!)
+				file = try FileHandle(forReadingFrom: path)
 			} catch {
 				
 			}
@@ -26,7 +26,7 @@ class NewPresenter: PresenterProtocol {
 		return file
 	}
  	func fileName() -> String {
-		return path?.lastPathComponent ?? ""
+		return path.lastPathComponent
 	}
 	func date() -> String {
 		return DateUtil.toPersian()

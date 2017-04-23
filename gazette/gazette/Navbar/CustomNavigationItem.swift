@@ -79,7 +79,7 @@ class CustomNavigationItem: UINavigationItem {
 	}
 	func prepareLabelTitleView() {
 		let label = UILabel()
-		label.font = AppFont.withSize(Dimensions.TextMedium)
+		label.font = AppFont.withSize(Dimensions.TextSmall)
 		label.textColor = ColorPalette.TextPrimary
 		label.text = title
 		label.sizeToFit()

@@ -13,4 +13,10 @@ class SignupPresenter: PresenterProtocol {
 	required init(_ vc: ViewProtocol) {
 		self.vc = vc
 	}
+	func signup(_ username: String, _ password: String, _ onComplete: CallBack) {
+		
+	}
+	func login(_ username: String, _ password: String, _ onComplete: CallBack) {
+		
+	}
 }

@@ -12,10 +12,16 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		
     }
-
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if CurrentUser.token.isEmpty {
+			performSegue(withIdentifier: "TutorialSegue", sender: nil)
+		} else {
+			performSegue(withIdentifier: "HomeSegue", sender: nil)
+		}
+	}
    
 
 }
