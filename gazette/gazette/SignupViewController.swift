@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import HTTPStatusCodes
 class SignupViewController: UIViewController, ViewProtocol {
 
 	@IBOutlet weak var username: SkyFloatingLabelTextField!
@@ -28,7 +28,7 @@ class SignupViewController: UIViewController, ViewProtocol {
 			if self.passwordConfirm.isValid().0 {
 				self.passwordConfirm.errorMessage = nil
 			} else {
-				if !self.passwordConfirm.unwrappedCleanText.isEmpty {
+				if !self.passwordConfirm.unwrappedText.isEmpty {
 					self.passwordConfirm.errorMessage = self.passwordConfirm.isValid().1
 				} else {
 					self.passwordConfirm.errorMessage = nil
@@ -95,13 +95,23 @@ class SignupViewController: UIViewController, ViewProtocol {
 		}
 		
 		if status == 1 {
-			presenter?.login(username.unwrappedCleanText, password.unwrappedCleanText, { (sender) in
+			presenter?.login(username.unwrappedCleanText, password.unwrappedText, { (sender) in
 				self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+			}, { (error, data) in
+				if error == HTTPStatusCode.noContent.rawValue {
+					self.username.errorMessage = "NoUserFound".localized
+				} else if error == HTTPStatusCode.unauthorized.rawValue {
+					self.password.errorMessage = "WrongPass".localized
+				}
 			})
 		} else {
 			
-			presenter?.signup(username.unwrappedCleanText, password.unwrappedCleanText, { (sender) in
+			presenter?.signup(username.unwrappedCleanText, password.unwrappedText, passwordConfirm.unwrappedText, { (sender) in
 				self.performSegue(withIdentifier: "HomeSegue", sender: nil)
+			}, { (error, data) in
+				if error == HTTPStatusCode.imUsed.rawValue {
+					self.username.errorMessage = "DuplicateUser".localized
+				}
 			})
 			
 		}

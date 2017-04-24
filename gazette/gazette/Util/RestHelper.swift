@@ -23,30 +23,41 @@ open class MyServerTrustPolicyManager: ServerTrustPolicyManager {
 class RestHelper {
 	static let trustPolicies = MyServerTrustPolicyManager(policies: [:])
 	static let manager = Alamofire.SessionManager(configuration: URLSessionConfiguration.default, delegate: SessionDelegate(), serverTrustPolicyManager: trustPolicies)
-	static func request(_ method: HTTPMethod, command: String, params: [String: Any]?, onComplete: @escaping (_ body: AnyObject?, _ bundle: [String: AnyObject]) -> (), onError: @escaping (_ error: Int?, _ body: String?, _ bundle: [String: AnyObject]?) -> ()){
-		let enc: ParameterEncoding = (method == HTTPMethod.post ? JSONEncoding.default : URLEncoding.default)
+	static func request(_ method: HTTPMethod, json: Bool = true, resultJson: Bool = true, command: String, params: [String: Any]?, onComplete: @escaping (_ data: Any?) -> (), onError: @escaping (_ error: Int?, _ data: Any?) -> ()){
+		let enc: ParameterEncoding = (json ? JSONEncoding.default : URLEncoding.default)
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		print("sending request \(command)")
-		
-		manager.request(URL(string: Constants.SERVER_ADDRESS + command)!, method: method, parameters: params, encoding: enc, headers: ["Content-Type": "application/json"]).responseJSON { (response) in
-			UIApplication.shared.isNetworkActivityIndicatorVisible = false
-			print("received result for \(command)")
-			guard response.result.isSuccess else {
-				print("Error : \(String(describing: response.result.error))")
-				onError(nil, nil, nil)
-				return
+		let header = json ? ["Content-Type": "application/json"] : nil
+		if resultJson {
+			manager.request(URL(string: Constants.SERVER_ADDRESS + command)!, method: method, parameters: params, encoding: enc, headers: header).responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments], completionHandler: { (response) in
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
+				print("received result for \(command)")
+				guard response.result.isSuccess else {
+					print("Error : \(String(describing: response.result.error))")
+					onError(response.response?.statusCode, response.result.value)
+					return
+				}
+				guard response.response?.statusCode == 200 else {
+					print("Error status : \(String(describing: response.response?.statusCode))")
+					onError(response.response?.statusCode, response.result.value)
+					return
+				}
+				onComplete(response.result.value)
+			})
+		} else {
+			manager.request(URL(string: Constants.SERVER_ADDRESS + command)!, method: method, parameters: params, encoding: enc, headers: header).responseString { (response) in
+				guard response.result.isSuccess else {
+					print("Error : \(String(describing: response.result.error))")
+					onError(response.response?.statusCode, response.result.value)
+					return
+				}
+				guard response.response?.statusCode == 200 else {
+					print("Error status : \(String(describing: response.response?.statusCode))")
+					onError(response.response?.statusCode, response.result.value)
+					return
+				}
+				onComplete(response.result.value)				
 			}
-			guard let value = response.result.value as? [String: AnyObject], let bundle = value["bundle"] as? [String: AnyObject] else {
-				print("Malformed data received")
-				onError(nil, nil, nil)
-				return
-			}
-			if value["status"] as? Int == 200{
-				onComplete(value["body"], bundle)
-			}else{
-				onError(value["status"] as? Int, value["body"] as? String, bundle)
-			}
-			
 		}
 		
 	}

@@ -11,24 +11,67 @@ import KeychainSwift
 class CurrentUser: NSObject {
 	static let keychain = KeychainSwift()
 	static var token: String {
-		return keychain.get("token") ?? ""
+		get {
+			return keychain.get("token") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "token")
+		}
 	}
 	static var username: String {
-		return keychain.get("username") ?? ""
+		get {
+			return keychain.get("username") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "username")
+		}
 	}
 	static var name: String {
-		return keychain.get("name") ?? ""
+		get {
+			return keychain.get("name") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "name")
+		}
 	}
+	static var passwordHash: String {
+		get {
+			return keychain.get("passwordHash") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "passwordHash")
+		}
+	}
+	
 	static var lastname: String {
-		return keychain.get("lastname") ?? ""
+		get {
+			return keychain.get("lastname") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "lastname")
+		}
 	}
 	static var picId: String {
-		return keychain.get("picId") ?? ""
+		get {
+			return keychain.get("picId") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "picId")
+		}
 	}
 	static var credit: Double {
-		var tmp: Double = 0
-		(keychain.getData("credit") as NSData?)?.getBytes(&tmp, length: MemoryLayout.size(ofValue: Double.self))
-		return tmp
+		get {
+			var tmp: Double = 0
+			(keychain.getData("credit") as NSData?)?.getBytes(&tmp, length: MemoryLayout.size(ofValue: tmp))
+			return tmp
+		}
+		set {
+			var value = newValue
+			let data = withUnsafePointer(to: &value) {
+				Data(bytes: UnsafePointer($0), count: MemoryLayout.size(ofValue: newValue))
+			}
+			keychain.set(data, forKey: "credit")
+		}
 	}
 	
 }

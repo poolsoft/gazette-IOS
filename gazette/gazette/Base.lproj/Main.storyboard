@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -352,103 +353,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-Kb-SH7">
-                                <rect key="frame" x="115.5" y="69" width="144" height="144"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMA-7X-V6z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-Kb-SH7">
+                                        <rect key="frame" x="116" y="10" width="144" height="144"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rHb-Kb-SH7" secondAttribute="height" multiplier="1:1" id="JeP-Le-TPx"/>
+                                            <constraint firstAttribute="height" constant="144" id="b26-OB-5gl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-Rf-ewx">
+                                        <rect key="frame" x="20" y="164" width="347" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="347" id="Szg-Th-zt5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBm-pF-NrP">
+                                        <rect key="frame" x="20" y="195" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmI-lh-rCQ">
+                                        <rect key="frame" x="301" y="226" width="54" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="RaL-lK-24u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-G7-Q2b">
+                                        <rect key="frame" x="20" y="261" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="خرید اعتبار"/>
+                                        <connections>
+                                            <action selector="onBuyCredit:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="3Ll-Uo-f6W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvH-ve-7PK">
+                                        <rect key="frame" x="20" y="308" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="نظرات"/>
+                                        <connections>
+                                            <action selector="onFeedback:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="7t1-hF-PO8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="758" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-Rm-FZt">
+                                        <rect key="frame" x="20" y="355" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="راهنما"/>
+                                        <connections>
+                                            <action selector="onHelp:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="X9A-Ah-0NQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-MS-7bg">
+                                        <rect key="frame" x="20" y="402" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="درباره ما"/>
+                                        <connections>
+                                            <action selector="onAboutUs:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="SN0-H2-rML"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz4-uO-UI8">
+                                        <rect key="frame" x="20" y="226" width="281" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7W-A3-1UE">
+                                        <rect key="frame" x="20" y="449" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="خروج"/>
+                                        <connections>
+                                            <action selector="onExit:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="qtb-hH-hdF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="144" id="1a7-As-iP0"/>
-                                    <constraint firstAttribute="height" constant="144" id="b26-OB-5gl"/>
+                                    <constraint firstItem="PvH-ve-7PK" firstAttribute="top" secondItem="l2r-G7-Q2b" secondAttribute="bottom" constant="10" id="3Ku-1H-ev8"/>
+                                    <constraint firstItem="rHb-Kb-SH7" firstAttribute="top" secondItem="CMA-7X-V6z" secondAttribute="top" constant="10" id="Acp-fm-ALP"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="PvH-ve-7PK" secondAttribute="trailing" constant="12" id="DaW-Xl-gtg"/>
+                                    <constraint firstItem="Ade-Rf-ewx" firstAttribute="top" secondItem="rHb-Kb-SH7" secondAttribute="bottom" constant="10" id="EZ7-uQ-ycf"/>
+                                    <constraint firstItem="l2r-G7-Q2b" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="Ele-dO-UH0"/>
+                                    <constraint firstItem="Ade-Rf-ewx" firstAttribute="leading" secondItem="CBm-pF-NrP" secondAttribute="leading" id="LDH-EO-zKe"/>
+                                    <constraint firstItem="q7W-A3-1UE" firstAttribute="leading" secondItem="G3v-MS-7bg" secondAttribute="leading" id="MaF-wS-Pjs"/>
+                                    <constraint firstItem="G3v-MS-7bg" firstAttribute="top" secondItem="FTK-Rm-FZt" secondAttribute="bottom" constant="10" id="MrR-r3-bjL"/>
+                                    <constraint firstItem="FTK-Rm-FZt" firstAttribute="top" secondItem="PvH-ve-7PK" secondAttribute="bottom" constant="10" id="O5p-BV-arb"/>
+                                    <constraint firstItem="Ade-Rf-ewx" firstAttribute="trailing" secondItem="CMA-7X-V6z" secondAttribute="trailingMargin" id="REi-Gi-mCQ"/>
+                                    <constraint firstItem="CBm-pF-NrP" firstAttribute="trailing" secondItem="CMA-7X-V6z" secondAttribute="trailingMargin" constant="-12" id="T8s-qQ-HFe"/>
+                                    <constraint firstItem="Uz4-uO-UI8" firstAttribute="top" secondItem="CBm-pF-NrP" secondAttribute="bottom" constant="10" id="TMO-2Q-WAu"/>
+                                    <constraint firstItem="EmI-lh-rCQ" firstAttribute="leading" secondItem="Uz4-uO-UI8" secondAttribute="trailing" id="UWl-Fj-xRC"/>
+                                    <constraint firstItem="Uz4-uO-UI8" firstAttribute="baseline" secondItem="EmI-lh-rCQ" secondAttribute="baseline" id="UrB-bL-rh3"/>
+                                    <constraint firstItem="PvH-ve-7PK" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="VMY-OP-FpE"/>
+                                    <constraint firstItem="l2r-G7-Q2b" firstAttribute="top" secondItem="EmI-lh-rCQ" secondAttribute="bottom" constant="10" id="an3-zO-Tk5"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="G3v-MS-7bg" secondAttribute="trailing" constant="12" id="cRO-l5-Cj5"/>
+                                    <constraint firstItem="l2r-G7-Q2b" firstAttribute="trailing" secondItem="CMA-7X-V6z" secondAttribute="trailingMargin" constant="-12" id="d5L-8P-e0P"/>
+                                    <constraint firstItem="CBm-pF-NrP" firstAttribute="top" secondItem="Ade-Rf-ewx" secondAttribute="bottom" constant="10" id="dIt-mX-phL"/>
+                                    <constraint firstItem="Uz4-uO-UI8" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="dbu-7F-8O9"/>
+                                    <constraint firstAttribute="bottom" secondItem="q7W-A3-1UE" secondAttribute="bottom" constant="10" id="gJc-Ta-bbV"/>
+                                    <constraint firstItem="FTK-Rm-FZt" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="j3J-Jx-n8e"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="FTK-Rm-FZt" secondAttribute="trailing" constant="12" id="lMY-ww-f96"/>
+                                    <constraint firstItem="EmI-lh-rCQ" firstAttribute="top" secondItem="CBm-pF-NrP" secondAttribute="bottom" constant="10" id="pQZ-4T-e5f"/>
+                                    <constraint firstItem="G3v-MS-7bg" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="q49-6U-DEW"/>
+                                    <constraint firstItem="q7W-A3-1UE" firstAttribute="trailing" secondItem="G3v-MS-7bg" secondAttribute="trailing" id="r77-xr-RRp"/>
+                                    <constraint firstItem="CBm-pF-NrP" firstAttribute="leading" secondItem="CMA-7X-V6z" secondAttribute="leadingMargin" constant="12" id="rpR-UL-1q4"/>
+                                    <constraint firstItem="q7W-A3-1UE" firstAttribute="top" secondItem="G3v-MS-7bg" secondAttribute="bottom" constant="10" id="sas-m3-bv7"/>
+                                    <constraint firstItem="EmI-lh-rCQ" firstAttribute="trailing" secondItem="CMA-7X-V6z" secondAttribute="trailingMargin" constant="-12" id="ty0-dC-WSw"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-Rf-ewx">
-                                <rect key="frame" x="16" y="223" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBm-pF-NrP">
-                                <rect key="frame" x="16" y="253.5" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmI-lh-rCQ">
-                                <rect key="frame" x="305" y="284.5" width="54" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="RaL-lK-24u"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-G7-Q2b">
-                                <rect key="frame" x="273" y="319.5" width="86" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="fO6-7p-lv1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <state key="normal" title="خرید اعتبار"/>
-                                <connections>
-                                    <action selector="onBuyCredit:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="3Ll-Uo-f6W"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvH-ve-7PK">
-                                <rect key="frame" x="16" y="477" width="343" height="37"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <state key="normal" title="نظرات"/>
-                                <connections>
-                                    <action selector="onFeedback:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="7t1-hF-PO8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-Rm-FZt">
-                                <rect key="frame" x="16" y="524" width="343" height="37"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <state key="normal" title="راهنما"/>
-                                <connections>
-                                    <action selector="onHelp:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="X9A-Ah-0NQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-MS-7bg">
-                                <rect key="frame" x="16" y="571" width="343" height="37"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <state key="normal" title="درباره ما"/>
-                                <connections>
-                                    <action selector="onAboutUs:" destination="mRT-2T-Cdo" eventType="touchUpInside" id="SN0-H2-rML"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz4-uO-UI8">
-                                <rect key="frame" x="16" y="284" width="289" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="G3v-MS-7bg" secondAttribute="trailing" id="2Cw-o9-Zxv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PvH-ve-7PK" secondAttribute="trailing" id="5DV-bJ-sva"/>
-                            <constraint firstItem="rHb-Kb-SH7" firstAttribute="top" secondItem="ptC-uF-JuA" secondAttribute="bottom" constant="5" id="8l4-NY-1br"/>
-                            <constraint firstItem="CBm-pF-NrP" firstAttribute="top" secondItem="Ade-Rf-ewx" secondAttribute="bottom" constant="10" id="Agy-dG-s5O"/>
-                            <constraint firstItem="Uz4-uO-UI8" firstAttribute="baseline" secondItem="EmI-lh-rCQ" secondAttribute="baseline" id="Cmq-Xg-QSp"/>
-                            <constraint firstItem="G3v-MS-7bg" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="EAT-xp-RoT"/>
-                            <constraint firstItem="l2r-G7-Q2b" firstAttribute="top" secondItem="EmI-lh-rCQ" secondAttribute="bottom" constant="10" id="FPg-UU-p4n"/>
-                            <constraint firstItem="Uz4-uO-UI8" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="Ica-rf-0p5"/>
-                            <constraint firstItem="Uz4-uO-UI8" firstAttribute="top" secondItem="CBm-pF-NrP" secondAttribute="bottom" constant="10" id="JUq-gx-fct"/>
-                            <constraint firstItem="rHb-Kb-SH7" firstAttribute="centerX" secondItem="QEf-pS-aNn" secondAttribute="centerX" id="O7C-YB-84f"/>
-                            <constraint firstItem="l2r-G7-Q2b" firstAttribute="trailing" secondItem="QEf-pS-aNn" secondAttribute="trailingMargin" id="Pt6-Sy-pwT"/>
-                            <constraint firstItem="tjW-aF-ch8" firstAttribute="top" secondItem="G3v-MS-7bg" secondAttribute="bottom" constant="10" id="SW8-lx-uz0"/>
-                            <constraint firstItem="EmI-lh-rCQ" firstAttribute="trailing" secondItem="QEf-pS-aNn" secondAttribute="trailingMargin" id="VHb-65-JzD"/>
-                            <constraint firstItem="Ade-Rf-ewx" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="Vu2-Ry-R2Y"/>
-                            <constraint firstItem="Ade-Rf-ewx" firstAttribute="trailing" secondItem="QEf-pS-aNn" secondAttribute="trailingMargin" id="ZRF-1t-wsz"/>
-                            <constraint firstItem="EmI-lh-rCQ" firstAttribute="leading" secondItem="Uz4-uO-UI8" secondAttribute="trailing" id="cIZ-7k-xWM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FTK-Rm-FZt" secondAttribute="trailing" id="gia-bp-S0f"/>
-                            <constraint firstItem="G3v-MS-7bg" firstAttribute="top" secondItem="FTK-Rm-FZt" secondAttribute="bottom" constant="10" id="jXm-px-Ti1"/>
-                            <constraint firstItem="FTK-Rm-FZt" firstAttribute="top" secondItem="PvH-ve-7PK" secondAttribute="bottom" constant="10" id="o7I-EL-bF6"/>
-                            <constraint firstItem="Ade-Rf-ewx" firstAttribute="top" secondItem="rHb-Kb-SH7" secondAttribute="bottom" constant="10" id="pqz-hI-7pf"/>
-                            <constraint firstItem="EmI-lh-rCQ" firstAttribute="top" secondItem="CBm-pF-NrP" secondAttribute="bottom" constant="10" id="r0e-rK-U4d"/>
-                            <constraint firstItem="CBm-pF-NrP" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="rAf-O7-RTD"/>
-                            <constraint firstItem="FTK-Rm-FZt" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="rnN-li-x7l"/>
-                            <constraint firstItem="PvH-ve-7PK" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leadingMargin" id="t3V-cb-ocD"/>
-                            <constraint firstItem="CBm-pF-NrP" firstAttribute="trailing" secondItem="QEf-pS-aNn" secondAttribute="trailingMargin" id="zak-nM-Tww"/>
+                            <constraint firstAttribute="trailing" secondItem="CMA-7X-V6z" secondAttribute="trailing" id="1hn-si-gKl"/>
+                            <constraint firstItem="tjW-aF-ch8" firstAttribute="top" secondItem="CMA-7X-V6z" secondAttribute="bottom" id="PE0-HN-iHh"/>
+                            <constraint firstItem="l2r-G7-Q2b" firstAttribute="centerX" secondItem="QEf-pS-aNn" secondAttribute="centerX" id="VSq-Zv-wz0"/>
+                            <constraint firstItem="CMA-7X-V6z" firstAttribute="leading" secondItem="QEf-pS-aNn" secondAttribute="leading" id="Zzl-TP-lYV"/>
+                            <constraint firstItem="CMA-7X-V6z" firstAttribute="top" secondItem="QEf-pS-aNn" secondAttribute="top" id="e7y-KN-Wge"/>
+                            <constraint firstItem="rHb-Kb-SH7" firstAttribute="centerX" secondItem="QEf-pS-aNn" secondAttribute="centerX" id="eZi-py-52F"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Profile" id="VIB-9b-7Tp"/>
@@ -457,6 +483,9 @@
                         <outlet property="email" destination="CBm-pF-NrP" id="78N-JH-3KT"/>
                         <outlet property="fullName" destination="Ade-Rf-ewx" id="EMz-Wj-xIH"/>
                         <outlet property="profileImage" destination="rHb-Kb-SH7" id="N9B-Fb-pZC"/>
+                        <outlet property="profileImageHeight" destination="b26-OB-5gl" id="7Hs-ta-wxc"/>
+                        <outlet property="profileImageTop" destination="Acp-fm-ALP" id="2s8-Hq-zZ7"/>
+                        <outlet property="scrollView" destination="CMA-7X-V6z" id="b5k-h1-R0e"/>
                         <segue destination="Dne-BI-CQk" kind="show" identifier="EditSegue" id="SmS-WP-n8U"/>
                     </connections>
                 </viewController>

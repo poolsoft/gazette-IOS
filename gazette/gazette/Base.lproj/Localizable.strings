@@ -22,3 +22,7 @@
 "PasswordNotEqual"="رمز عبور یکسان نمی‌باشد";
 "FieldIsEmpty" = "فیلد نباید خالی باشد";
 "EmailIsNotValid" = "پست الکترونیکی معتبر نیست";
+"DuplicateUser" = "این نام کاربری قبلا استفاده شده است";
+"NoUserFound" = "نام کاربری موجود نیست";
+"WrongPass" = "رمز عبور اشتباه است";
+"AreYouSureExit" = "آیا از خروج خود مطمئن هستید؟";

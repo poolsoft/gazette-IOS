@@ -31,5 +31,14 @@ class ProfilePresenter: PresenterProtocol {
 	func editProfile(name: String, lastname: String, email: String) {
 		
 	}
+	func logout() {
+		CurrentUser.token = ""
+		CurrentUser.name = ""
+		CurrentUser.lastname = ""
+		CurrentUser.username = ""
+		CurrentUser.credit = 0
+		CurrentUser.passwordHash = ""
+		CurrentUser.picId = ""
+	}
 	
 }

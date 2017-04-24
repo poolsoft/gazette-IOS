@@ -7,24 +7,10 @@
 //
 
 import UIKit
-class Constants: NSObject {	
-	//	 Developing
+class Constants: NSObject {		
 	
-	//	static let PEER_NAME = "84.241.45.172"
-	//	static let PEER_NAME = "178.21.40.89"
-	//	static let STUB = true
-	//	static let AMQ_ADDRESS = "amqp://guest:guest@84.241.45.172:5672"
-	//	static let AMQ_ADDRESS = "amqp://guest:guest@178.21.40.89:5672"
-	//	static var SERVER_ADDRESS = "http://84.241.45.172:7999/"
-	//	static var SERVER_ADDRESS = "https://178.21.40.89/"
-//	static let useSSL = false
-	
-	//	 Production
-	
-	static let PEER_NAME = "ipbshop.parsian-bank.ir"
 	static let STUB = false
-	static let AMQ_ADDRESS = "amqps://guest:guest@mqshop.parsian-bank.ir:5671"
-	static let SERVER_ADDRESS = "https://ipbshop.parsian-bank.ir/"
+	static let SERVER_ADDRESS = "http://192.168.1.17:8080/"
 	static let useSSL = false
 	
 }

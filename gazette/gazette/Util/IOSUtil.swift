@@ -408,6 +408,7 @@ class IOSUtil: NSObject {
 }
 // MARK: Type aliases
 typealias CallBack = (Any?) -> ()
+typealias ErrorCallBack = (Int?, Any?) -> ()
 typealias NSObjectCallBack = (Any?) -> ()
 
 
@@ -832,6 +833,10 @@ extension UITextField {
 	var unwrappedCleanText: String {
 		let str = self.text ?? ""
 		return str.trim
+	}
+	var unwrappedText: String {
+		let str = self.text ?? ""
+		return str
 	}
 }
 
