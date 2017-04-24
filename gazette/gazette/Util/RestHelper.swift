@@ -24,6 +24,7 @@ class RestHelper {
 	static let trustPolicies = MyServerTrustPolicyManager(policies: [:])
 	static let manager = Alamofire.SessionManager(configuration: URLSessionConfiguration.default, delegate: SessionDelegate(), serverTrustPolicyManager: trustPolicies)
 	static func request(_ method: HTTPMethod, json: Bool = true, resultJson: Bool = true, command: String, params: [String: Any]?, onComplete: @escaping (_ data: Any?) -> (), onError: @escaping (_ error: Int?, _ data: Any?) -> ()){
+		manager.session.configuration.timeoutIntervalForRequest = 30
 		let enc: ParameterEncoding = (json ? JSONEncoding.default : URLEncoding.default)
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		print("sending request \(command)")
@@ -34,6 +35,7 @@ class RestHelper {
 				print("received result for \(command)")
 				guard response.result.isSuccess else {
 					print("Error : \(String(describing: response.result.error))")
+					print("Error status : \(String(describing: response.response?.statusCode))")
 					onError(response.response?.statusCode, response.result.value)
 					return
 				}
@@ -48,6 +50,7 @@ class RestHelper {
 			manager.request(URL(string: Constants.SERVER_ADDRESS + command)!, method: method, parameters: params, encoding: enc, headers: header).responseString { (response) in
 				guard response.result.isSuccess else {
 					print("Error : \(String(describing: response.result.error))")
+					print("Error status : \(String(describing: response.response?.statusCode))")
 					onError(response.response?.statusCode, response.result.value)
 					return
 				}
@@ -69,6 +72,7 @@ class RestHelper {
 				sentHeaders[k.0] = k.1
 			}
 		}
+		manager.session.configuration.timeoutIntervalForRequest = 120
 		sentHeaders["Content-Type"] = "multipart/form-data"
 		let url = URL(string: Constants.SERVER_ADDRESS + command)!
 		manager.upload(multipartFormData: { (multipart) in
@@ -103,6 +107,7 @@ class RestHelper {
 	static func download(_ mediaId: String, onProgress: ((Int) -> Void)?, onComplete: @escaping (URL?)->(Void), onError: @escaping (Void) -> (Void)) {
 		var fileUrl: URL?
 		let url = URL(string: Constants.SERVER_ADDRESS + "download?token=" + CurrentUser.token + "&id=" + mediaId)!
+		manager.session.configuration.timeoutIntervalForRequest = 120
 		manager.download(url) { (url: URL, response: HTTPURLResponse) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
 			let fileName = response.allHeaderFields["fileName"] as? String ?? NSUUID().uuidString
 			let pathComponent = IOSUtil.getCache("downloads", String(NSDate().timeIntervalSince1970) + "_" + fileName)
@@ -127,6 +132,7 @@ class RestHelper {
 	
 	static func downloadProfile(_ chatRoute: String, username: String, onComplete: @escaping (URL?)->(Void), onError: @escaping (Void) -> (Void)) {
 		var fileUrl: URL?
+		manager.session.configuration.timeoutIntervalForRequest = 120
 		let url = URL(string: Constants.SERVER_ADDRESS + "downloadProfile?token=" + CurrentUser.token + "&chatRoute=" + chatRoute + "&username=" + username)!
 		manager.download(url) { (url, response) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
 			let fileName = response.allHeaderFields["fileName"] as? String ?? NSUUID().uuidString

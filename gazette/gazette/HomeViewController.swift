@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = HomePresenter(self)
+		presenter?.requestTransactions()
         tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
@@ -46,14 +47,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		self.tableView.reloadData()
 	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return presenter?.listAllTransactions().count ?? 0
+		return presenter?.transactions?.count ?? 0
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
-		let transaction = presenter!.listAllTransactions()[indexPath.row]
+		let transaction = presenter!.transactions![indexPath.row]
 		cell.firstLine.text = transaction.transactionId
 		if transaction.transactionDate != nil {
 			cell.secondLine.text = DateUtil.relativeDiffFromNow(transaction.transactionDate!)
@@ -75,7 +76,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 			
 		}))
 		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
-			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.listAllTransactions()[indexPath.row])
+			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.transactions![indexPath.row])
 		}))
 		controller.addAction(Action("Delete".localized, style: .destructive, handler: { (action) in
 			

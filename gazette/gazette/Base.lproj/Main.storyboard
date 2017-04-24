@@ -181,10 +181,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
-                                <rect key="frame" x="16" y="20" width="343" height="216"/>
+                                <rect key="frame" x="16" y="20" width="343" height="154"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -194,7 +194,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adM-yV-hgK" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="47.5" width="343" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -204,7 +204,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOE-9J-2WM" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="95" width="343" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -214,7 +214,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
-                                        <rect key="frame" x="0.0" y="142" width="343" height="37"/>
+                                        <rect key="frame" x="0.0" y="90" width="343" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="عضویت"/>
                                         <connections>
@@ -222,7 +222,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
-                                        <rect key="frame" x="0.0" y="179" width="343" height="37"/>
+                                        <rect key="frame" x="0.0" y="122" width="343" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="قبلا ثبت نام کرده‌ام"/>
                                         <connections>
@@ -505,69 +505,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-gL-6Bm" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                <rect key="frame" x="16" y="90" width="343" height="47.5"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="نام"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="نام"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u17-Po-0Ka" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                <rect key="frame" x="16" y="169.5" width="343" height="47.5"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="نام خانوادگی"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="نام خانوادگی"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dpi-oY-OIo" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                <rect key="frame" x="16" y="258" width="343" height="47.5"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="پست الکترونیکی"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="پست الکترونیکی"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-2z-xXI">
-                                <rect key="frame" x="16" y="398" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qpt-kU-JH7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <state key="normal" title="تأیید"/>
-                                <connections>
-                                    <action selector="onTaiid:" destination="Dne-BI-CQk" eventType="touchUpInside" id="8rZ-fz-j7X"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-a8-F4q">
+                                <rect key="frame" x="16" y="74" width="343" height="232"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-gL-6Bm" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="نام"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="نام"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u17-Po-0Ka" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="نام خانوادگی"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="نام خانوادگی"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBo-Mw-Rq8">
+                                        <rect key="frame" x="0.0" y="80" width="343" height="32"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="برای تغییر رمز عبور اینجا را کلیک کنید"/>
+                                        <connections>
+                                            <action selector="onChangeStatus:" destination="Dne-BI-CQk" eventType="touchUpInside" id="sTq-f1-6Jo"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAZ-JV-vf8" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="122" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="رمز عبور"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="رمز عبور"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-4D-JJi" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="162" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="تکرار رمز عبور"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="تکرار رمز عبور"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-2z-xXI">
+                                        <rect key="frame" x="0.0" y="202" width="343" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="qpt-kU-JH7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                        <state key="normal" title="تأیید"/>
+                                        <connections>
+                                            <action selector="onTaiid:" destination="Dne-BI-CQk" eventType="touchUpInside" id="8rZ-fz-j7X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dpi-oY-OIo" firstAttribute="trailing" secondItem="3C5-2z-xXI" secondAttribute="trailing" id="1at-dW-Gct"/>
-                            <constraint firstItem="4sY-gL-6Bm" firstAttribute="top" secondItem="tJs-rR-ney" secondAttribute="bottom" constant="26" id="1be-Ka-Zs3"/>
-                            <constraint firstItem="4sY-gL-6Bm" firstAttribute="trailing" secondItem="Zl4-Mk-vo6" secondAttribute="trailingMargin" id="2m0-OL-fmD"/>
-                            <constraint firstItem="4sY-gL-6Bm" firstAttribute="leading" secondItem="u17-Po-0Ka" secondAttribute="leading" id="3hA-am-hb4"/>
-                            <constraint firstItem="u17-Po-0Ka" firstAttribute="top" secondItem="4sY-gL-6Bm" secondAttribute="bottom" constant="32" id="Cyp-8k-FeI"/>
-                            <constraint firstItem="Dpi-oY-OIo" firstAttribute="leading" secondItem="3C5-2z-xXI" secondAttribute="leading" id="LFj-v8-OvQ"/>
-                            <constraint firstItem="Dpi-oY-OIo" firstAttribute="top" secondItem="u17-Po-0Ka" secondAttribute="bottom" constant="41" id="NTJ-kX-wgW"/>
-                            <constraint firstItem="u17-Po-0Ka" firstAttribute="trailing" secondItem="Dpi-oY-OIo" secondAttribute="trailing" id="WxJ-OE-nKC"/>
-                            <constraint firstItem="4sY-gL-6Bm" firstAttribute="leading" secondItem="Zl4-Mk-vo6" secondAttribute="leadingMargin" id="bGt-Kq-cKq"/>
-                            <constraint firstItem="4sY-gL-6Bm" firstAttribute="trailing" secondItem="u17-Po-0Ka" secondAttribute="trailing" id="emq-RP-tMz"/>
-                            <constraint firstItem="XAV-xl-1H2" firstAttribute="top" secondItem="3C5-2z-xXI" secondAttribute="bottom" constant="190" id="vXk-nT-zjN"/>
-                            <constraint firstItem="u17-Po-0Ka" firstAttribute="leading" secondItem="Dpi-oY-OIo" secondAttribute="leading" id="xNB-Tq-NyZ"/>
+                            <constraint firstItem="Jkj-a8-F4q" firstAttribute="top" secondItem="tJs-rR-ney" secondAttribute="bottom" constant="10" id="6tk-hh-UCs"/>
+                            <constraint firstItem="Jkj-a8-F4q" firstAttribute="leadingMargin" secondItem="Zl4-Mk-vo6" secondAttribute="leadingMargin" id="WE7-I6-5PZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jkj-a8-F4q" secondAttribute="trailingMargin" id="WVN-Uf-r50"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FPD-As-6Yb" customClass="CustomNavigationItem" customModule="gazette" customModuleProvider="target"/>
                     <connections>
-                        <outlet property="email" destination="Dpi-oY-OIo" id="qrM-3z-A1L"/>
+                        <outlet property="changeStatusButton" destination="tBo-Mw-Rq8" id="07Y-AY-32G"/>
+                        <outlet property="confirmPassword" destination="4cp-4D-JJi" id="701-w7-A1j"/>
                         <outlet property="lastname" destination="u17-Po-0Ka" id="nii-bI-vwm"/>
                         <outlet property="name" destination="4sY-gL-6Bm" id="6x8-8F-JPE"/>
+                        <outlet property="password" destination="AAZ-JV-vf8" id="TQL-mq-gwN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNb-gH-xRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -861,7 +877,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7P-nS-ZTg" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                <rect key="frame" x="16" y="195" width="343" height="47.5"/>
+                                <rect key="frame" x="16" y="195" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>

@@ -73,5 +73,16 @@ class CurrentUser: NSObject {
 			keychain.set(data, forKey: "credit")
 		}
 	}
+	static func update(_ userInfo: [String: Any], changeToken: Bool = true) {
+		if changeToken {
+			CurrentUser.token = userInfo["token"] as? String ?? ""
+		}
+		CurrentUser.username = userInfo["email"] as? String ?? ""
+		CurrentUser.name = userInfo["name"] as? String ?? ""
+		CurrentUser.lastname = userInfo["lastName"] as? String ?? ""
+		CurrentUser.picId = userInfo["picId"] as? String ?? ""
+		CurrentUser.passwordHash = userInfo["passwordHash"] as? String ?? ""
+		CurrentUser.credit = userInfo["credit"] as? Double ?? 0
+	}
 	
 }

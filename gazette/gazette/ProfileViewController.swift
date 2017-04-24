@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = ProfilePresenter(self)
+		presenter?.requestUpdate()
 		scrollView.delegate = self
     }
 	override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +40,9 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		
 	}
 	func reload() {
-		profileImage.load.request(with: presenter!.myPicUrl())
+		if let url = presenter!.myPicUrl() {
+			profileImage.load.request(with: url)
+		}
 		fullName.text = presenter!.myName() + " " + presenter!.myLastname()
 		email.text = presenter!.myEmail()
 		credit.text = StringUtil.addSeparator(presenter!.myCredit() as NSNumber)

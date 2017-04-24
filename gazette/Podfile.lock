@@ -4,6 +4,7 @@ PODS:
   - ImageLoader (0.12.2)
   - KeychainSwift (7.0.0)
   - ObjectMapper (2.2.4)
+  - PKHUD (4.2.1)
   - QRCode (2.0)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - ImageLoader (~> 0.12)
   - KeychainSwift (~> 7.0)
   - ObjectMapper (~> 2.2)
+  - PKHUD (~> 4.0)
   - QRCode (~> 2.0)
   - RealmSwift (~> 2.4)
   - XLActionController (~> 3.0)
@@ -30,11 +32,12 @@ SPEC CHECKSUMS:
   ImageLoader: f461c9641350d0b8df39c2d3785b263f15cd63c2
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
   ObjectMapper: 81d0e5d7c57129e3e93f29a04bdf9669542b37d2
+  PKHUD: 957ce2a68b3c97a51839b30216120c1dbc0c3a78
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
   RealmSwift: 30d49739ccb3385d201242736ca4dda56aec9dfc
   XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: bd269a35183ce9ed064d90cc1fdef3960538e153
+PODFILE CHECKSUM: 18692cf269cc8388bc6f0fb491adf9db895e93bf
 
 COCOAPODS: 1.1.1
