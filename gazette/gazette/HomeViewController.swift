@@ -18,7 +18,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = HomePresenter(self)
-		presenter?.requestTransactions()
         tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
@@ -36,6 +35,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		super.viewWillAppear(animated)
 		self.tabBarController?.navigationItem.title = "Home".localized
 		(self.tabBarController?.navigationItem as! CustomNavigationItem).showNone()
+		presenter?.requestTransactions()
 	}
 	func updateSearchResults(for searchController: UISearchController) {
 		let search = searchController.searchBar.text ?? ""

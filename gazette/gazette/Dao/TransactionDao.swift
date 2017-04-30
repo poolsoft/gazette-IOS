@@ -11,7 +11,7 @@ import RealmSwift
 class TransactionDao: Dao<Transaction> {
 	func search(_ query: String) -> Results<Transaction> {
 		let realm = try! Realm()
-		let predicate = NSPredicate(format: "transactionId contains %@", query)
+		let predicate = NSPredicate(format: "transactionId contains[c] %@", query)
 		return realm.objects(Transaction.self).filter(predicate)
 	}
 	func findByTxId(_ txId: String) -> Transaction? {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 class ValidateViewController: UIViewController, ViewProtocol {
 	
 	
@@ -15,7 +15,6 @@ class ValidateViewController: UIViewController, ViewProtocol {
 
 	@IBOutlet weak var hashLabel: UILabel!
 	
-	@IBOutlet weak var transactionInput: UITextField!
 	
 	
 	
@@ -34,6 +33,12 @@ class ValidateViewController: UIViewController, ViewProtocol {
 
     
 	@IBAction func onTaiid(_ sender: Any) {
-		presenter?.taid(transactionInput.text ?? "")
+		HUD.show(.progress)
+		presenter?.taid({ (data) in
+			HUD.flash(.labeledSuccess(title: "foundTransaction".localized, subtitle: (data as? [String: Any])?["txId"] as? String ?? ""), delay: 2.0)
+			
+		}, { (error, data) in
+			HUD.flash(.labeledError(title: "notFoundTransaction".localized, subtitle: nil), delay: 2.0)
+		})
 	}
 }

@@ -47,15 +47,26 @@
 		846609731EAB8DF800FD532F /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609721EAB8DF800FD532F /* ProfilePresenter.swift */; };
 		846609751EAB8E0E00FD532F /* ValidatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609741EAB8E0E00FD532F /* ValidatePresenter.swift */; };
 		846609771EAB8E1700FD532F /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609761EAB8E1700FD532F /* SignupPresenter.swift */; };
-		846609791EAB970400FD532F /* CryptoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846609781EAB970400FD532F /* CryptoUtil.swift */; };
 		847D4A6C1EACAA9100766FA2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */; };
 		847D4A6E1EACB69300766FA2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6D1EACB69300766FA2 /* Events.swift */; };
 		847D4A701EACB93C00766FA2 /* LastTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */; };
 		8499153B1EAC7BED000510B3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153A1EAC7BED000510B3 /* ShareViewController.swift */; };
 		8499153D1EAC7BF9000510B3 /* SharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153C1EAC7BF9000510B3 /* SharePresenter.swift */; };
-		8499153F1EAC954E000510B3 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */; };
-		849915411EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		849915431EAC995A000510B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849915421EAC995A000510B3 /* EditProfileViewController.swift */; };
+		84E761B51EB5CA5500E0FE7D /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761B41EB5CA5500E0FE7D /* KMPlaceholderTextView.swift */; };
+		84E761B91EB5CAAB00E0FE7D /* CryptoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761B61EB5CAAB00E0FE7D /* CryptoUtil.swift */; };
+		84E761BA1EB5CAAB00E0FE7D /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761B71EB5CAAB00E0FE7D /* SkyFloatingLabelTextField.swift */; };
+		84E761BB1EB5CAAB00E0FE7D /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761B81EB5CAAB00E0FE7D /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		84E761CE1EB5DC3F00E0FE7D /* UIImage+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761CC1EB5DC3F00E0FE7D /* UIImage+ImageLoader.swift */; };
+		84E761CF1EB5DC3F00E0FE7D /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761CD1EB5DC3F00E0FE7D /* UIImageView+ImageLoader.swift */; };
+		84E761D81EB5DC4D00E0FE7D /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D01EB5DC4D00E0FE7D /* Disk.swift */; };
+		84E761D91EB5DC4D00E0FE7D /* HashStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D11EB5DC4D00E0FE7D /* HashStorage.swift */; };
+		84E761DA1EB5DC4D00E0FE7D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D21EB5DC4D00E0FE7D /* ImageLoader.swift */; };
+		84E761DB1EB5DC4D00E0FE7D /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D31EB5DC4D00E0FE7D /* Loadable.swift */; };
+		84E761DC1EB5DC4D00E0FE7D /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D41EB5DC4D00E0FE7D /* Loader.swift */; };
+		84E761DD1EB5DC4D00E0FE7D /* Operative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D51EB5DC4D00E0FE7D /* Operative.swift */; };
+		84E761DE1EB5DC4D00E0FE7D /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D61EB5DC4D00E0FE7D /* Option.swift */; };
+		84E761DF1EB5DC4D00E0FE7D /* URLLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E761D71EB5DC4D00E0FE7D /* URLLiteralConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,15 +116,26 @@
 		846609721EAB8DF800FD532F /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		846609741EAB8E0E00FD532F /* ValidatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatePresenter.swift; sourceTree = "<group>"; };
 		846609761EAB8E1700FD532F /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
-		846609781EAB970400FD532F /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtil.swift; sourceTree = "<group>"; };
 		847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		847D4A6D1EACB69300766FA2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastTutorialViewController.swift; sourceTree = "<group>"; };
 		8499153A1EAC7BED000510B3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		8499153C1EAC7BF9000510B3 /* SharePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenter.swift; sourceTree = "<group>"; };
-		8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
-		849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		849915421EAC995A000510B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		84E761B41EB5CA5500E0FE7D /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KMPlaceholderTextView.swift; path = Util/KMPlaceholderTextView.swift; sourceTree = "<group>"; };
+		84E761B61EB5CAAB00E0FE7D /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CryptoUtil.swift; path = Util/CryptoUtil.swift; sourceTree = "<group>"; };
+		84E761B71EB5CAAB00E0FE7D /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextField.swift; path = Util/SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		84E761B81EB5CAAB00E0FE7D /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextFieldWithIcon.swift; path = Util/SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		84E761CC1EB5DC3F00E0FE7D /* UIImage+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageLoader.swift"; path = "ImageLoader/Extension/UIImage+ImageLoader.swift"; sourceTree = "<group>"; };
+		84E761CD1EB5DC3F00E0FE7D /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/Extension/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		84E761D01EB5DC4D00E0FE7D /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Disk.swift; path = ImageLoader/Core/Disk.swift; sourceTree = "<group>"; };
+		84E761D11EB5DC4D00E0FE7D /* HashStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashStorage.swift; path = ImageLoader/Core/HashStorage.swift; sourceTree = "<group>"; };
+		84E761D21EB5DC4D00E0FE7D /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/Core/ImageLoader.swift; sourceTree = "<group>"; };
+		84E761D31EB5DC4D00E0FE7D /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loadable.swift; path = ImageLoader/Core/Loadable.swift; sourceTree = "<group>"; };
+		84E761D41EB5DC4D00E0FE7D /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = ImageLoader/Core/Loader.swift; sourceTree = "<group>"; };
+		84E761D51EB5DC4D00E0FE7D /* Operative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operative.swift; path = ImageLoader/Core/Operative.swift; sourceTree = "<group>"; };
+		84E761D61EB5DC4D00E0FE7D /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = ImageLoader/Core/Option.swift; sourceTree = "<group>"; };
+		84E761D71EB5DC4D00E0FE7D /* URLLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLLiteralConvertible.swift; path = ImageLoader/Core/URLLiteralConvertible.swift; sourceTree = "<group>"; };
 		A76517C4826A74D91F67A32D /* Pods-gazette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazette.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazette/Pods-gazette.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +154,9 @@
 		845A8DFB1EAB2F370006E5FF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				84E761B61EB5CAAB00E0FE7D /* CryptoUtil.swift */,
+				84E761B71EB5CAAB00E0FE7D /* SkyFloatingLabelTextField.swift */,
+				84E761B81EB5CAAB00E0FE7D /* SkyFloatingLabelTextFieldWithIcon.swift */,
 				845A8DF71EAB2F2E0006E5FF /* IOSUtil.swift */,
 				845A8DF81EAB2F2E0006E5FF /* RestHelper.swift */,
 				845A8E071EAB399B0006E5FF /* ImagePickerUtil.swift */,
@@ -139,9 +164,7 @@
 				845A8E0B1EAB3A410006E5FF /* StringUtil.swift */,
 				845A8E0D1EAB3A8D0006E5FF /* PhoneUtil.swift */,
 				845A8E0F1EAB3AAF0006E5FF /* ContactsProvider.swift */,
-				846609781EAB970400FD532F /* CryptoUtil.swift */,
-				8499153E1EAC954E000510B3 /* SkyFloatingLabelTextField.swift */,
-				849915401EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift */,
+				84E761B41EB5CA5500E0FE7D /* KMPlaceholderTextView.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -254,6 +277,7 @@
 		845C3F551EAB2A0C00BFD608 /* gazette */ = {
 			isa = PBXGroup;
 			children = (
+				84E761C91EB5DC1B00E0FE7D /* ImageLoader */,
 				845A8E3C1EAB6D990006E5FF /* CustomActionSheet */,
 				845A8E001EAB32550006E5FF /* Navbar */,
 				845A8DFB1EAB2F370006E5FF /* Util */,
@@ -283,6 +307,39 @@
 				8466096B1EAB747B00FD532F /* TransactionCell.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		84E761C91EB5DC1B00E0FE7D /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				84E761CB1EB5DC3300E0FE7D /* Extension */,
+				84E761CA1EB5DC2F00E0FE7D /* Core */,
+			);
+			name = ImageLoader;
+			sourceTree = "<group>";
+		};
+		84E761CA1EB5DC2F00E0FE7D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				84E761D01EB5DC4D00E0FE7D /* Disk.swift */,
+				84E761D11EB5DC4D00E0FE7D /* HashStorage.swift */,
+				84E761D21EB5DC4D00E0FE7D /* ImageLoader.swift */,
+				84E761D31EB5DC4D00E0FE7D /* Loadable.swift */,
+				84E761D41EB5DC4D00E0FE7D /* Loader.swift */,
+				84E761D51EB5DC4D00E0FE7D /* Operative.swift */,
+				84E761D61EB5DC4D00E0FE7D /* Option.swift */,
+				84E761D71EB5DC4D00E0FE7D /* URLLiteralConvertible.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		84E761CB1EB5DC3300E0FE7D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84E761CC1EB5DC3F00E0FE7D /* UIImage+ImageLoader.swift */,
+				84E761CD1EB5DC3F00E0FE7D /* UIImageView+ImageLoader.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		A2FDBEB5F7D3B4EFCB1EED15 /* Frameworks */ = {
@@ -444,42 +501,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				845A8E201EAB5B550006E5FF /* ValidateViewController.swift in Sources */,
+				84E761B91EB5CAAB00E0FE7D /* CryptoUtil.swift in Sources */,
 				845A8E3A1EAB6D940006E5FF /* Skype.swift in Sources */,
 				847D4A6C1EACAA9100766FA2 /* TutorialViewController.swift in Sources */,
 				845A8DFD1EAB321E0006E5FF /* CustomNavBar.swift in Sources */,
 				847D4A701EACB93C00766FA2 /* LastTutorialViewController.swift in Sources */,
 				845A8E311EAB5E250006E5FF /* Transaction.swift in Sources */,
 				845A8E2C1EAB5D910006E5FF /* Dao.swift in Sources */,
+				84E761DF1EB5DC4D00E0FE7D /* URLLiteralConvertible.swift in Sources */,
 				845A8E131EAB3E5A0006E5FF /* TabBarController.swift in Sources */,
+				84E761BB1EB5CAAB00E0FE7D /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				845A8E221EAB5C850006E5FF /* HomeViewController.swift in Sources */,
 				8499153D1EAC7BF9000510B3 /* SharePresenter.swift in Sources */,
+				84E761B51EB5CA5500E0FE7D /* KMPlaceholderTextView.swift in Sources */,
+				84E761BA1EB5CAAB00E0FE7D /* SkyFloatingLabelTextField.swift in Sources */,
+				84E761CF1EB5DC3F00E0FE7D /* UIImageView+ImageLoader.swift in Sources */,
+				84E761DB1EB5DC4D00E0FE7D /* Loadable.swift in Sources */,
 				849915431EAC995A000510B3 /* EditProfileViewController.swift in Sources */,
 				845A8DFF1EAB32450006E5FF /* CustomNavigationItem.swift in Sources */,
 				845A8E261EAB5CA90006E5FF /* MainViewController.swift in Sources */,
 				845A8E0C1EAB3A410006E5FF /* StringUtil.swift in Sources */,
+				84E761DE1EB5DC4D00E0FE7D /* Option.swift in Sources */,
 				845A8E241EAB5C980006E5FF /* ProfileViewController.swift in Sources */,
+				84E761D91EB5DC4D00E0FE7D /* HashStorage.swift in Sources */,
 				845A8DF91EAB2F2E0006E5FF /* IOSUtil.swift in Sources */,
 				845C3F571EAB2A0C00BFD608 /* AppDelegate.swift in Sources */,
 				845A8DF61EAB2EE00006E5FF /* Constants.swift in Sources */,
+				84E761CE1EB5DC3F00E0FE7D /* UIImage+ImageLoader.swift in Sources */,
+				84E761DD1EB5DC4D00E0FE7D /* Operative.swift in Sources */,
 				845A8E101EAB3AAF0006E5FF /* ContactsProvider.swift in Sources */,
-				8499153F1EAC954E000510B3 /* SkyFloatingLabelTextField.swift in Sources */,
 				845A8E0E1EAB3A8D0006E5FF /* PhoneUtil.swift in Sources */,
 				846609771EAB8E1700FD532F /* SignupPresenter.swift in Sources */,
 				8466096F1EAB8D1D00FD532F /* MVPProtocol.swift in Sources */,
+				84E761D81EB5DC4D00E0FE7D /* Disk.swift in Sources */,
 				845A8E341EAB5F270006E5FF /* TransactionDao.swift in Sources */,
 				845A8E0A1EAB3A0D0006E5FF /* DateUtil.swift in Sources */,
-				849915411EAC9577000510B3 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				846609711EAB8D9D00FD532F /* NewPresenter.swift in Sources */,
 				845A8E1B1EAB536B0006E5FF /* NSBundle+Language.m in Sources */,
-				846609791EAB970400FD532F /* CryptoUtil.swift in Sources */,
 				845A8DFA1EAB2F2E0006E5FF /* RestHelper.swift in Sources */,
 				845A8E2F1EAB5DB10006E5FF /* BaseEntity.swift in Sources */,
 				845A8E281EAB5CC40006E5FF /* SignupViewController.swift in Sources */,
 				8499153B1EAC7BED000510B3 /* ShareViewController.swift in Sources */,
+				84E761DA1EB5DC4D00E0FE7D /* ImageLoader.swift in Sources */,
 				845A8E1E1EAB5B3B0006E5FF /* NewViewController.swift in Sources */,
 				846609731EAB8DF800FD532F /* ProfilePresenter.swift in Sources */,
 				845A8E3E1EAB70E90006E5FF /* HomePresenter.swift in Sources */,
 				845A8E151EAB405A0006E5FF /* CurrentUser.swift in Sources */,
+				84E761DC1EB5DC4D00E0FE7D /* Loader.swift in Sources */,
 				8466096C1EAB747B00FD532F /* TransactionCell.swift in Sources */,
 				847D4A6E1EACB69300766FA2 /* Events.swift in Sources */,
 				845A8E081EAB399B0006E5FF /* ImagePickerUtil.swift in Sources */,

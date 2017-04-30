@@ -26,3 +26,6 @@
 "NoUserFound" = "نام کاربری موجود نیست";
 "WrongPass" = "رمز عبور اشتباه است";
 "AreYouSureExit" = "آیا از خروج خود مطمئن هستید؟";
+"foundTransaction" = "قبلا در سامانه همچین تراکنشی ثبت شده است";
+"notFoundTransaction" = "تراکنشی با چنین مشخصاتی یافت نشد";
+"Description" = "توضیحات";

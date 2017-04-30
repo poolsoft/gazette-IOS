@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 class NewViewController: UIViewController, ViewProtocol {
 
 	@IBOutlet weak var fileName: UILabel!
@@ -33,10 +33,15 @@ class NewViewController: UIViewController, ViewProtocol {
 		hashLabel.text = presenter?.hash()
 		price.text = presenter?.price()
 		credit.text = presenter?.credit()
-		desc.text = presenter?.desc()
+		desc.text = presenter?.desc()		
 	}
 	@IBAction func onTaiid(_ sender: Any) {
-		presenter?.taid(desc.text, useCredit.isOn, localSave.isOn)
+		HUD.show(.progress)
+		presenter?.taid(desc.text, useCredit.isOn, localSave.isOn, onComplete: { (data) in
+			HUD.flash(.success, delay: 0.5)
+		}, onError: { (error, data) in
+			HUD.flash(.error, delay: 0.5)
+		})
 	}
     
 

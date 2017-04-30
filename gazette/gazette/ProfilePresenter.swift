@@ -26,20 +26,33 @@ class ProfilePresenter: PresenterProtocol {
 		return CurrentUser.username
 	}
 	func myPicUrl() -> URL? {
-		return URL(string: "https://avatars1.githubusercontent.com/u/10295952?v=3&s=400")
+		return URL(string: Constants.SERVER_ADDRESS + "downloadProfile/" + CurrentUser.token)
 	}
-	func editProfile(name: String, lastname: String, passwordHash: String, onComplete: @escaping CallBack, onError: @escaping ErrorCallBack) {
+	func editProfile(name: String, lastname: String, passwordHash: String, pic: URL? = nil, onComplete: @escaping CallBack, onError: @escaping ErrorCallBack) {
 		if IOSUtil.lock("updateProfile") {
-			RestHelper.request(.post, json: false, command: "updateProfile", params: ["token":CurrentUser.token, "passwordHash":passwordHash, "name":name, "lastName":lastname, "profilePic":""], onComplete: { (data) in
-				IOSUtil.unLock("updateProfile")
-				let userInfo = data as! [String: Any]
-				CurrentUser.update(userInfo, changeToken: false)
-				self.vc.reload?()
-				onComplete(data)
-			}, onError: { (error, data) in
-				IOSUtil.unLock("updateProfile")
-				onError(error, data)
-			})
+			if pic == nil {
+				RestHelper.request(.post, json: false, command: "updateProfile", params: ["token":CurrentUser.token, "passwordHash":passwordHash, "name":name, "lastName":lastname], onComplete: { (data) in
+					IOSUtil.unLock("updateProfile")
+					let userInfo = data as! [String: Any]
+					CurrentUser.update(userInfo, changeToken: false)
+					self.vc.reload?()
+					onComplete(data)
+				}, onError: { (error, data) in
+					IOSUtil.unLock("updateProfile")
+					onError(error, data)
+				})
+			} else {
+				RestHelper.upload("updateProfile", params: ["token":CurrentUser.token, "passwordHash":passwordHash, "name":name, "lastName":lastname], fileUrl: pic!, fileParam: "profilePic", onComplete: { (data) in
+					IOSUtil.unLock("updateProfile")
+					let userInfo = data as! [String: Any]
+					CurrentUser.update(userInfo, changeToken: false)
+					self.vc.reload?()
+					onComplete(data)
+				}, onError: { (error, data) in
+					IOSUtil.unLock("updateProfile")
+					onError(error, data)
+				})
+			}
 		}
 		
 	}

@@ -65,7 +65,7 @@ class RestHelper {
 		
 	}
 	
-	static func upload(_ command: String, headers: [String: String]?, fileUrl: URL, onComplete: @escaping (_ body: String?, _ bundle: [String: AnyObject]) -> (), onError: @escaping (_ error: Int?, _ body: String?, _ bundle: [String: AnyObject]?) -> ()) {
+	static func upload(_ command: String, headers: [String: String]? = nil, params: [String: String]? = nil, fileUrl: URL, fileParam: String = "files", onComplete: @escaping (_ data: Any?) -> (), onError: @escaping (_ error: Int?, _ data: Any?) -> ()) {
 		var sentHeaders = [String: String]()
 		if headers != nil {
 			for k in headers! {
@@ -76,7 +76,12 @@ class RestHelper {
 		sentHeaders["Content-Type"] = "multipart/form-data"
 		let url = URL(string: Constants.SERVER_ADDRESS + command)!
 		manager.upload(multipartFormData: { (multipart) in
-			multipart.append(fileUrl, withName: "files")
+			multipart.append(fileUrl, withName: fileParam)
+			if params != nil {
+				for k in params! {
+					multipart.append(k.value.data(using: .utf8, allowLossyConversion: false)!, withName: k.key)
+				}
+			}
 		}, usingThreshold: UInt64.init(), to: url, method: .post, headers: sentHeaders) { (encodingResult) in
 			switch encodingResult {
 			case .success(let upload, _, _):
@@ -84,19 +89,16 @@ class RestHelper {
 					print("response = \(response)")
 					guard response.result.isSuccess else {
 						print("Error : \(String(describing: response.result.error))")
-						onError(nil, nil, nil)
+						print("Error status : \(String(describing: response.response?.statusCode))")
+						onError(response.response?.statusCode, response.result.value)
 						return
 					}
-					guard let value = response.result.value as? [String: AnyObject], let bundle = value["bundle"] as? [String: AnyObject] else {
-						print("Malformed data received")
-						onError(nil, nil, nil)
+					guard response.response?.statusCode == 200 else {
+						print("Error status : \(String(describing: response.response?.statusCode))")
+						onError(response.response?.statusCode, response.result.value)
 						return
 					}
-					if value["status"] as? Int == 200{
-						onComplete(value["body"] as? String, bundle)
-					}else{
-						onError(value["status"] as? Int, value["body"] as? String, bundle)
-					}
+					onComplete(response.result.value)
 				}
 			case .failure(let encodingError):
 				print(encodingError)

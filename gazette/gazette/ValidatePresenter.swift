@@ -9,7 +9,12 @@
 import Foundation
 class ValidatePresenter: PresenterProtocol {
 	let vc: ViewProtocol
-	var path: URL!
+	var localHash = ""
+	var path: URL! {
+		didSet {
+			localHash = ""
+		}
+	}
 	fileprivate var file: FileHandle?
 	private var transactions: [Transaction]?
 	required init(_ vc: ViewProtocol) {
@@ -30,16 +35,24 @@ class ValidatePresenter: PresenterProtocol {
 	}
 	
 	func hash() -> String {
-		if let file = getFile() {
-			let data = file.readDataToEndOfFile()
-			let sha256Data = CryptoUtil.sha256(data: data)
-			return sha256Data.hexEncodedString()
-			
+		if localHash.isEmpty {
+			if let file = getFile() {
+				let data = file.readDataToEndOfFile()
+				let sha256Data = CryptoUtil.sha256(data: data)
+				localHash = sha256Data.hexEncodedString()
+			} else {
+				localHash = ""
+			}
 		}
-		return ""
+		return localHash
 	}
 	
-	func taid(_ transactionId: String) {
+	func taid(_ onComplete: @escaping CallBack, _ onError: @escaping ErrorCallBack) {
+		RestHelper.request(.post, json: false, command: "validateTnxBydataHash", params: ["dataHash":hash()], onComplete: { (data) in
+			onComplete(data)
+		}) { (error, data) in
+			onError(error, data)
+		}
 		
 	}
 }

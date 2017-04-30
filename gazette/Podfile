@@ -12,7 +12,6 @@ pod 'KeychainSwift', '~> 7.0'
 pod 'RealmSwift', '~> 2.4'
 pod 'XLActionController', '~> 3.0'
 pod 'QRCode', '~> 2.0'
-pod 'ImageLoader', '~> 0.12'
 pod 'HTTPStatusCodes', '~> 3.1.1'
 pod 'PKHUD', '~> 4.0'
 end

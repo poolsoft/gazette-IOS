@@ -358,10 +358,14 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-Kb-SH7">
                                         <rect key="frame" x="116" y="10" width="144" height="144"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rHb-Kb-SH7" secondAttribute="height" multiplier="1:1" id="JeP-Le-TPx"/>
                                             <constraint firstAttribute="height" constant="144" id="b26-OB-5gl"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Qi4-Dz-MMV" appends="YES" id="TgB-gb-D1v"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-Rf-ewx">
                                         <rect key="frame" x="20" y="164" width="347" height="21"/>
@@ -490,6 +494,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFP-YT-QM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Qi4-Dz-MMV">
+                    <connections>
+                        <action selector="onImageClicked:" destination="mRT-2T-Cdo" id="IVF-iI-Eql"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-114.40000000000001" y="1118.5907046476761"/>
         </scene>
@@ -634,13 +643,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-5B-dn2">
-                                <rect key="frame" x="16" y="126" width="343" height="69"/>
+                                <rect key="frame" x="16" y="126" width="343" height="78"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قیمت:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8A-DP-fGf">
-                                <rect key="frame" x="300" y="253" width="59" height="21"/>
+                                <rect key="frame" x="300" y="257" width="59" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="nsa-kO-Ir4"/>
                                 </constraints>
@@ -649,16 +658,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-Zn-FW1">
-                                <rect key="frame" x="16" y="251" width="276" height="23"/>
+                                <rect key="frame" x="16" y="257.5" width="276" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BCu-Ff-1J9">
-                                <rect key="frame" x="8" y="285" width="51" height="35"/>
+                                <rect key="frame" x="8" y="289" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از اعتبارم استفاده کن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-2o-ReK">
-                                <rect key="frame" x="82" y="290" width="277" height="25"/>
+                                <rect key="frame" x="82" y="294" width="277" height="21"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -678,7 +687,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="توضیحات ..." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="d10-Rd-dih">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="d10-Rd-dih" customClass="KMPlaceholderTextView" customModule="gazette" customModuleProvider="target">
                                 <rect key="frame" x="8" y="352" width="351" height="90"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -686,6 +695,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="توضیحات ..."/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-Lc-0RF">
                                 <rect key="frame" x="8" y="475" width="351" height="30"/>
@@ -699,10 +711,10 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="txB-l0-jwo">
-                                <rect key="frame" x="8" y="205" width="51" height="31"/>
+                                <rect key="frame" x="8" y="211.5" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در سرور داخلی ذخیره شود" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-hD-0Kt">
-                                <rect key="frame" x="82" y="208" width="277" height="25"/>
+                                <rect key="frame" x="82" y="217" width="277" height="20"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -876,18 +888,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7P-nS-ZTg" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                <rect key="frame" x="16" y="195" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="شماره تراکنش"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="شماره تراکنش"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-RM-rPh">
-                                <rect key="frame" x="16" y="403" width="343" height="30"/>
+                                <rect key="frame" x="16" y="268" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Gc-jJ-JvE"/>
                                 </constraints>
@@ -900,24 +902,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="w7P-nS-ZTg" firstAttribute="leading" secondItem="1AI-RM-rPh" secondAttribute="leading" id="Af8-Gu-tBK"/>
+                            <constraint firstItem="1AI-RM-rPh" firstAttribute="top" secondItem="Gbv-mH-RE0" secondAttribute="bottom" constant="100" id="CnW-ka-KoQ"/>
                             <constraint firstItem="mpk-c9-kCP" firstAttribute="trailing" secondItem="Gbv-mH-RE0" secondAttribute="trailing" id="CoE-o9-fAW"/>
                             <constraint firstItem="mpk-c9-kCP" firstAttribute="top" secondItem="MAv-eh-EJ1" secondAttribute="bottom" constant="29" id="J8b-3a-5bq"/>
-                            <constraint firstItem="w7P-nS-ZTg" firstAttribute="top" secondItem="Gbv-mH-RE0" secondAttribute="bottom" constant="27" id="L4S-xo-tnH"/>
                             <constraint firstItem="Gbv-mH-RE0" firstAttribute="top" secondItem="mpk-c9-kCP" secondAttribute="bottom" constant="33" id="UIz-yT-vci"/>
                             <constraint firstItem="mpk-c9-kCP" firstAttribute="leading" secondItem="mCo-sr-ea7" secondAttribute="leadingMargin" id="WFA-Qa-daz"/>
-                            <constraint firstItem="ddE-ZV-0Jo" firstAttribute="top" secondItem="1AI-RM-rPh" secondAttribute="bottom" constant="185" id="eFt-d6-Awt"/>
-                            <constraint firstItem="w7P-nS-ZTg" firstAttribute="trailing" secondItem="1AI-RM-rPh" secondAttribute="trailing" id="fMd-MK-eEc"/>
+                            <constraint firstItem="1AI-RM-rPh" firstAttribute="leading" secondItem="Gbv-mH-RE0" secondAttribute="leading" id="XpG-Aj-WIn"/>
                             <constraint firstItem="mpk-c9-kCP" firstAttribute="trailing" secondItem="mCo-sr-ea7" secondAttribute="trailingMargin" id="nmp-vf-97r"/>
                             <constraint firstItem="mpk-c9-kCP" firstAttribute="leading" secondItem="Gbv-mH-RE0" secondAttribute="leading" id="q1K-2J-5BV"/>
-                            <constraint firstItem="Gbv-mH-RE0" firstAttribute="leading" secondItem="w7P-nS-ZTg" secondAttribute="leading" id="qFg-v9-fd2"/>
-                            <constraint firstItem="Gbv-mH-RE0" firstAttribute="trailing" secondItem="w7P-nS-ZTg" secondAttribute="trailing" id="uW2-By-2Jm"/>
+                            <constraint firstItem="1AI-RM-rPh" firstAttribute="trailing" secondItem="Gbv-mH-RE0" secondAttribute="trailing" id="xEp-Y4-yx2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="filename" destination="mpk-c9-kCP" id="1xN-aG-WJA"/>
                         <outlet property="hashLabel" destination="Gbv-mH-RE0" id="aKt-fw-Oh9"/>
-                        <outlet property="transactionInput" destination="w7P-nS-ZTg" id="NIU-pj-lUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBA-zf-zzM" userLabel="First Responder" sceneMemberID="firstResponder"/>

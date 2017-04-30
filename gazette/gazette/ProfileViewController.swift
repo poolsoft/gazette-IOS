@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ImageLoader
+import PKHUD
 class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrollViewDelegate {
 
 	@IBOutlet weak var scrollView: UIScrollView!
@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 	@IBOutlet weak var credit: UILabel!
 	@IBOutlet weak var profileImageTop: NSLayoutConstraint!
 	@IBOutlet weak var profileImageHeight: NSLayoutConstraint!
+	let imagePicker = ImagePickerUtil()
 	var defaultHeight: CGFloat = 0
 	var defaultTop: CGFloat = 0
 	var presenter: ProfilePresenter?
@@ -25,6 +26,19 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		presenter = ProfilePresenter(self)
 		presenter?.requestUpdate()
 		scrollView.delegate = self
+		imagePicker.onPicSaved = { (path) in
+			HUD.show(.progress)
+			self.presenter!.editProfile(name: CurrentUser.name, lastname: CurrentUser.lastname, passwordHash: CurrentUser.passwordHash, pic: URL(fileURLWithPath: path as! String), onComplete: { (data) in
+				HUD.flash(.success, delay: 0.5)
+				IOSUtil.postDelay({ 
+					self.profileImage.load.removeCache()
+					self.reload()
+				}, seconds: 0)
+				
+			}, onError: { (error, data) in
+				HUD.flash(.error, delay: 0.5)
+			})
+		}
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -83,6 +97,11 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		performSegue(withIdentifier: "EditSegue", sender: nil)
 	}
 	
+	@IBAction func onImageClicked(_ sender: UITapGestureRecognizer) {
+		imagePicker.showImagePickerOptions(self)
+		
+	}
 	
 	
 }
+
