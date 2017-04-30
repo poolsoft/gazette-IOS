@@ -70,6 +70,10 @@ class IOSUtil: NSObject {
 			iosSemaphore.signal()
 		}
 	}
+	static func copyToClipboard(_ message: String) {
+		let pasteboard = UIPasteboard.general
+		pasteboard.string = message
+	}
 	static func dispatchTimeFromNow(_ seconds: Double) -> DispatchTime {
 		return DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 	}

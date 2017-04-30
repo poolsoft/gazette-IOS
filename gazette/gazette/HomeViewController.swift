@@ -73,14 +73,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let controller = SkypeActionController()
 		controller.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
 		controller.addAction(Action("CopyTx".localized, style: .default, handler: { (action) in
-			
+			IOSUtil.copyToClipboard(self.presenter!.transactions![indexPath.row].transactionId)
 		}))
 		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
 			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.transactions![indexPath.row])
 		}))
-		controller.addAction(Action("Delete".localized, style: .destructive, handler: { (action) in
-			
-		}))
+		
 		controller.addAction(Action("Cancel".localized, style: .cancel, handler: { (action) in
 			
 		}))
