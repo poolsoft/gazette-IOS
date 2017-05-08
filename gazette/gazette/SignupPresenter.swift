@@ -14,7 +14,7 @@ class SignupPresenter: PresenterProtocol {
 		self.vc = vc
 	}
 	func signup(_ username: String, _ password: String, _ confirmPassword: String, _ onComplete: @escaping CallBack, _ onError: @escaping ErrorCallBack) {
-		RestHelper.request(.post, json: false, command: "signup", params: ["email":username, "passwordHash":CryptoUtil.sha1(password), "confirmPasswordHash":CryptoUtil.sha1(confirmPassword), "platform": "Ios"], onComplete: { (data) in
+		RestHelper.request(.post, json: false, command: "signup", params: ["email":username, "passwordHash":CryptoUtil.sha256(password), "confirmPasswordHash":CryptoUtil.sha256(confirmPassword), "platform": "Ios"], onComplete: { (data) in
 			let userInfo = data as! [String: Any]
 			CurrentUser.update(userInfo)
 			onComplete(data)
@@ -23,7 +23,7 @@ class SignupPresenter: PresenterProtocol {
 		}
 	}
 	func login(_ username: String, _ password: String, _ onComplete: @escaping CallBack, _ onError: @escaping ErrorCallBack) {
-		RestHelper.request(.post, json: false, command: "login", params: ["email":username, "passwordHash":CryptoUtil.sha1(password), "platform":"Ios"], onComplete: { (data) in
+		RestHelper.request(.post, json: false, command: "login", params: ["email":username, "passwordHash":CryptoUtil.sha256(password), "platform":"Ios"], onComplete: { (data) in
 			let userInfo = data as! [String: Any]
 			CurrentUser.update(userInfo)
 			onComplete(data)

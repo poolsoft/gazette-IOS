@@ -15,7 +15,7 @@ class SharePresenter: PresenterProtocol {
 		self.vc = vc
 	}
 	func qrCode() -> UIImage? {
-		let code = QRCode("http://url/" + entity.transactionId)
+		let code = QRCode("http://sabtshod.com/#/transaction/detail/" + entity.transactionId)
 		return code!.image
 	}
 	func transactionId() -> String {

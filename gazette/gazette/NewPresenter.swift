@@ -59,13 +59,13 @@ class NewPresenter: PresenterProtocol {
 	}
 	func taid(_ desc: String, _ useCredit: Bool, _ localSave: Bool, onComplete: @escaping CallBack, onError: @escaping ErrorCallBack) {
 		if localSave {
-			RestHelper.upload("createTnx", params: ["token":CurrentUser.token, "hash":hash()], fileUrl: path, fileParam: "uploadedFile", onComplete: { (data) in
+			RestHelper.upload("createTnx", params: ["token":CurrentUser.token, "hash":hash(), "desc": desc], fileUrl: path, fileParam: "uploadedFile", onComplete: { (data) in
 				onComplete(data)
 			}, onError: { (error, data) in
 				onError(error, data)
 			})
 		} else {
-			RestHelper.request(.post, json: false, command: "createTnx", params: ["token":CurrentUser.token, "hash":hash()], onComplete: { (data) in
+			RestHelper.request(.post, json: false, command: "createTnx", params: ["token":CurrentUser.token, "hash":hash(), "desc": desc], onComplete: { (data) in
 				onComplete(data)
 			}, onError: { (error, data) in
 				onError(error, data)

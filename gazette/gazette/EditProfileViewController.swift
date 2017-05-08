@@ -109,7 +109,7 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 				return
 			}
 			HUD.show(.progress)
-			presenter?.editProfile(name: name.unwrappedCleanText, lastname: lastname.unwrappedCleanText, passwordHash: CryptoUtil.sha1(password.unwrappedText), onComplete: { (data) in
+			presenter?.editProfile(name: name.unwrappedCleanText, lastname: lastname.unwrappedCleanText, passwordHash: CryptoUtil.sha256(password.unwrappedText), onComplete: { (data) in
 				HUD.flash(.success, delay: 0.5)
 			}, onError: { (error, data) in
 				HUD.flash(.error, delay: 0.5)

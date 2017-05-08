@@ -15,11 +15,11 @@ class CryptoUtil: NSObject {
 		}
 		return Data(bytes: hash)
 	}
-	static func sha1(_ str: String) -> String {
+	static func sha256(_ str: String) -> String {
 		let data = str.data(using: String.Encoding.utf8)!
-		var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
+		var digest = [UInt8](repeating: 0, count:Int(CC_SHA256_DIGEST_LENGTH))
 		data.withUnsafeBytes {
-			_ = CC_SHA1($0, CC_LONG(data.count), &digest)
+			_ = CC_SHA256($0, CC_LONG(data.count), &digest)
 		}
 		let hexBytes = digest.map { String(format: "%02hhx", $0) }
 		return hexBytes.joined()

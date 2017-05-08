@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import HTTPStatusCodes
 class NewViewController: UIViewController, ViewProtocol {
 
 	@IBOutlet weak var fileName: UILabel!
@@ -40,7 +41,11 @@ class NewViewController: UIViewController, ViewProtocol {
 		presenter?.taid(desc.text, useCredit.isOn, localSave.isOn, onComplete: { (data) in
 			HUD.flash(.success, delay: 0.5)
 		}, onError: { (error, data) in
-			HUD.flash(.error, delay: 0.5)
+			if error == HTTPStatusCode.alreadyReported.rawValue {
+				HUD.flash(.label("foundTransaction".localized), delay: 2.0)
+			} else {
+				HUD.flash(.error, delay: 0.5)
+			}
 		})
 	}
     

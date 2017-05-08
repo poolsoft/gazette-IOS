@@ -9,6 +9,7 @@
 import Foundation
 class Transaction: BaseEntity {
 	dynamic var transactionId: String = ""
+	dynamic var desc: String = ""
 	dynamic var transactionDate: Date? = nil
 	dynamic var transactionConfirmDate: Date? = nil
 	dynamic var fileId: String = ""
@@ -16,6 +17,7 @@ class Transaction: BaseEntity {
 	
 	func update(_ map: [String: Any]) {
 		self.transactionId = map["txId"] as? String ?? ""
+		self.desc = map["desc"] as? String ?? ""
 		if let date = map["txCreatedDate"] as? Double {
 			self.transactionDate = Date(timeIntervalSince1970: date/1000.0)
 		}
