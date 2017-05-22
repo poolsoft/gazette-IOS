@@ -11,8 +11,9 @@
 "Cancel"="انصراف";
 "Search"="جستجو";
 "Signup"="عضویت";
+"SignupTitle"="ثبت نام";
 "Login"="ورود";
-"WantToLogin"="قبلا ثبت نام کرده‌ام";
+"WantToLogin"="قبلا ثبت نام کرده‌ام. ورود";
 "WantToSignup"="می‌خواهم ثبت نام کنم";
 "Home"="خانه";
 "Profile"="پروفایل";

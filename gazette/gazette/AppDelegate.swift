@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
 		UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
 		
-		UILabel.appearance().defaultFont = AppFont.font()
+		UILabel.appearance(whenContainedInInstancesOf: [UIButton.self]).defaultFont = AppFont.font()
 		UITextField.appearance().defaultFont = AppFont.font()
 		UITextView.appearance().defaultFont = AppFont.font()
 		

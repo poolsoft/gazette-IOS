@@ -14,4 +14,5 @@ pod 'XLActionController', '~> 3.0'
 pod 'QRCode', '~> 2.0'
 pod 'HTTPStatusCodes', '~> 3.1.1'
 pod 'PKHUD', '~> 4.0'
+pod 'FontAwesome.swift'
 end

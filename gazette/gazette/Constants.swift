@@ -18,15 +18,15 @@ class Constants: NSObject {
 struct ColorPalette {
 	static let ChatBackground = UIColor(netHex: 0xF5F5F5)
 	static let Actionbar = Primary
-	static let Primary = UIColor(netHex: 0xF44336)
+	static let Primary = UIColor(netHex: 0x275FFC)
 	static let DarkPrimary = UIColor(netHex: 0xD32F2F)
 	static let SuperDarkPrimary = UIColor(netHex: 0xB71C1C)
 	static let LightPrimary = UIColor(netHex: 0xEF5350)
 	static let TextPrimary = UIColor(netHex: 0xFFFFFF)
 	static let TextSecondary = UIColor(hexString: "#DD000000")
 	static let TextGray = UIColor(netHex: 0xA0A0A0)
-	static let Accent = UIColor(netHex: 0xFF1744)
-	static let DarkAccent = UIColor(netHex: 0xD50000)
+	static let Accent = UIColor.white
+	static let DarkAccent = UIColor(netHex: 0x275FFC)
 	static let Control = UIColor(netHex: 0x31000000)
 	static let Background = UIColor(netHex: 0xFFFFFF)
 	static let Divider = UIColor(netHex: 0x11000000)

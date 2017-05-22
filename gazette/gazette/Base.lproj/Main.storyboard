@@ -60,8 +60,8 @@
                             <pageControl contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0TS-8b-5JS">
                                 <rect key="frame" x="16" y="630" width="343" height="37"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="pageIndicatorTintColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,23 +93,34 @@
                         <viewControllerLayoutGuide type="top" id="tpy-pf-41A"/>
                         <viewControllerLayoutGuide type="bottom" id="2Fb-fa-3vC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t4P-Kl-PvY" customClass="I">
+                    <view key="view" contentMode="scaleToFill" id="t4P-Kl-PvY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1C-Ww-bvR">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TutorialBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-2M-McT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-bO-Mmj">
+                                <rect key="frame" x="16" y="50" width="343" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="vmF-0K-gIc"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57y-9h-EoZ">
-                                <rect key="frame" x="111" y="107" width="143" height="30"/>
+                                <rect key="frame" x="46" y="587" width="283" height="30"/>
+                                <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ceg-i6-xhK"/>
-                                    <constraint firstAttribute="width" constant="143" id="mj2-IU-B1e"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                <state key="normal" title="ثبت نام">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onConfirm:" destination="VHi-br-0XT" eventType="touchUpInside" id="MjU-Di-X3i"/>
                                 </connections>
@@ -117,11 +128,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W1C-Ww-bvR" firstAttribute="leading" secondItem="t4P-Kl-PvY" secondAttribute="leadingMargin" id="1jQ-44-Gso"/>
-                            <constraint firstItem="57y-9h-EoZ" firstAttribute="leading" secondItem="t4P-Kl-PvY" secondAttribute="leadingMargin" constant="95" id="7P1-tH-Vgo"/>
-                            <constraint firstItem="57y-9h-EoZ" firstAttribute="top" secondItem="W1C-Ww-bvR" secondAttribute="bottom" constant="66.5" id="KPq-Mo-NYR"/>
-                            <constraint firstItem="W1C-Ww-bvR" firstAttribute="top" secondItem="tpy-pf-41A" secondAttribute="bottom" id="Paf-US-BkH"/>
-                            <constraint firstItem="W1C-Ww-bvR" firstAttribute="trailing" secondItem="t4P-Kl-PvY" secondAttribute="trailingMargin" id="w5K-1m-V62"/>
+                            <constraint firstItem="mvQ-2M-McT" firstAttribute="leading" secondItem="t4P-Kl-PvY" secondAttribute="leading" id="77M-kp-wPW"/>
+                            <constraint firstItem="2Fb-fa-3vC" firstAttribute="top" secondItem="mvQ-2M-McT" secondAttribute="bottom" id="DQz-OT-eqk"/>
+                            <constraint firstItem="2Fb-fa-3vC" firstAttribute="top" secondItem="57y-9h-EoZ" secondAttribute="bottom" constant="50" id="IHN-JE-60y"/>
+                            <constraint firstItem="mvQ-2M-McT" firstAttribute="top" secondItem="t4P-Kl-PvY" secondAttribute="top" id="Le7-GF-T4Y"/>
+                            <constraint firstItem="vSn-bO-Mmj" firstAttribute="trailing" secondItem="t4P-Kl-PvY" secondAttribute="trailingMargin" id="b3V-tJ-cUr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="57y-9h-EoZ" secondAttribute="trailing" constant="30" id="cdF-x8-TKy"/>
+                            <constraint firstItem="57y-9h-EoZ" firstAttribute="leading" secondItem="t4P-Kl-PvY" secondAttribute="leadingMargin" constant="30" id="dBg-My-FXk"/>
+                            <constraint firstItem="vSn-bO-Mmj" firstAttribute="top" secondItem="tpy-pf-41A" secondAttribute="bottom" constant="30" id="ibd-o0-9Ms"/>
+                            <constraint firstAttribute="trailing" secondItem="mvQ-2M-McT" secondAttribute="trailing" id="mFB-KS-kI2"/>
+                            <constraint firstItem="vSn-bO-Mmj" firstAttribute="leading" secondItem="t4P-Kl-PvY" secondAttribute="leadingMargin" id="p43-gq-RlB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -141,24 +157,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-Ez-oEa">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TutorialBackground" translatesAutoresizingMaskIntoConstraints="NO" id="M2y-gu-6OO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="3vF-Ke-WML">
+                                <rect key="frame" x="16" y="50" width="343" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="lip-3N-jbJ"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5rF-bx-LBZ">
+                                <rect key="frame" x="36" y="417" width="303" height="200"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.37254901960784315" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="C0x-b5-cUB"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EL5-Ez-oEa" firstAttribute="top" secondItem="Bzx-BT-w6y" secondAttribute="bottom" id="Avn-3H-gU7"/>
-                            <constraint firstItem="EL5-Ez-oEa" firstAttribute="leading" secondItem="FI9-dv-PTy" secondAttribute="leadingMargin" id="VY6-sk-RND"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EL5-Ez-oEa" secondAttribute="trailing" id="ddM-yB-izG"/>
+                            <constraint firstItem="3vF-Ke-WML" firstAttribute="top" secondItem="Bzx-BT-w6y" secondAttribute="bottom" constant="30" id="DXk-LR-o9v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5rF-bx-LBZ" secondAttribute="trailing" constant="20" id="Khq-ZR-C4e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3vF-Ke-WML" secondAttribute="trailing" id="YGS-Bj-ryH"/>
+                            <constraint firstItem="M2y-gu-6OO" firstAttribute="leading" secondItem="FI9-dv-PTy" secondAttribute="leading" id="YlP-vx-0Fk"/>
+                            <constraint firstItem="saO-UN-tvw" firstAttribute="top" secondItem="M2y-gu-6OO" secondAttribute="bottom" id="ZyT-AU-3nB"/>
+                            <constraint firstItem="saO-UN-tvw" firstAttribute="top" secondItem="5rF-bx-LBZ" secondAttribute="bottom" constant="50" id="dDR-Qo-AvB"/>
+                            <constraint firstItem="M2y-gu-6OO" firstAttribute="top" secondItem="Bzx-BT-w6y" secondAttribute="bottom" id="hCI-2R-TCI"/>
+                            <constraint firstAttribute="trailing" secondItem="M2y-gu-6OO" secondAttribute="trailing" id="hGP-pD-9Pw"/>
+                            <constraint firstItem="3vF-Ke-WML" firstAttribute="leading" secondItem="FI9-dv-PTy" secondAttribute="leadingMargin" id="oLv-pO-wyR"/>
+                            <constraint firstItem="5rF-bx-LBZ" firstAttribute="leading" secondItem="FI9-dv-PTy" secondAttribute="leadingMargin" constant="20" id="y0C-VU-awR"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNu-tj-MS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4039" y="-1684"/>
+            <point key="canvasLocation" x="-4039.1999999999998" y="-1684.4077961019491"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="PqO-mL-7Ah">
@@ -180,71 +221,183 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
-                                <rect key="frame" x="16" y="20" width="343" height="164"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TutorialBackground" translatesAutoresizingMaskIntoConstraints="NO" id="AFp-sa-C3p">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-B9-4D7">
+                                <rect key="frame" x="16" y="70" width="343" height="317.5"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <nil key="textColor"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eje-UZ-Vwv">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="16"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ثبت شد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-3g-qxu">
+                                        <rect key="frame" x="0.0" y="46" width="343" height="25"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-jd-nv4">
+                                        <rect key="frame" x="0.0" y="101" width="343" height="216.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
+                                                <rect key="frame" x="10" y="10" width="323" height="196.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="پست الکترونیکی"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="پست الکترونیکی"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adM-yV-hgK" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="40" width="323" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="رمز عبور"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="رمز عبور"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOE-9J-2WM" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="80" width="323" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="تکرار رمز عبور"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="تکرار رمز عبور"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
+                                                        <rect key="frame" x="0.0" y="120" width="323" height="34"/>
+                                                        <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="عضویت">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onConfirm:" destination="AMY-VU-n9x" eventType="touchUpInside" id="tWv-1Q-Da4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
+                                                        <rect key="frame" x="0.0" y="164" width="323" height="32.5"/>
+                                                        <state key="normal">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="قبلا ثبت نام کرده‌ام.">
+                                                                    <attributes>
+                                                                        <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                                        <color key="NSColor" red="0.59993284940719604" green="0.60003870725631714" blue="0.5999261736869812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="ورود">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="می‌خواهم ">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="ثبت نام">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" کنم">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="14" name="Gandom"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onSwapForm:" destination="AMY-VU-n9x" eventType="touchUpInside" id="e32-Fp-j8L"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dfp-KZ-Ri4" secondAttribute="trailing" constant="10" id="4zA-FF-Rdd"/>
+                                            <constraint firstAttribute="bottom" secondItem="dfp-KZ-Ri4" secondAttribute="bottom" constant="10" id="Cvq-fm-Wus"/>
+                                            <constraint firstItem="dfp-KZ-Ri4" firstAttribute="top" secondItem="IaH-jd-nv4" secondAttribute="top" constant="10" id="YCa-8q-CPT"/>
+                                            <constraint firstItem="dfp-KZ-Ri4" firstAttribute="leading" secondItem="IaH-jd-nv4" secondAttribute="leading" constant="10" id="dM5-v3-F7h"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="پست الکترونیکی"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="پست الکترونیکی"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adM-yV-hgK" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="رمز عبور"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="رمز عبور"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOE-9J-2WM" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="تکرار رمز عبور"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="تکرار رمز عبور"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
-                                        <rect key="frame" x="0.0" y="90" width="343" height="37"/>
-                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                        <state key="normal" title="عضویت"/>
-                                        <connections>
-                                            <action selector="onConfirm:" destination="AMY-VU-n9x" eventType="touchUpInside" id="tWv-1Q-Da4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
-                                        <rect key="frame" x="0.0" y="127" width="343" height="37"/>
-                                        <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                        <state key="normal" title="قبلا ثبت نام کرده‌ام"/>
-                                        <connections>
-                                            <action selector="onSwapForm:" destination="AMY-VU-n9x" eventType="touchUpInside" id="e32-Fp-j8L"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dfp-KZ-Ri4" firstAttribute="top" secondItem="e0t-v5-FON" secondAttribute="bottom" id="FCJ-UB-ntQ"/>
-                            <constraint firstItem="dfp-KZ-Ri4" firstAttribute="leading" secondItem="cnm-TZ-VYd" secondAttribute="leadingMargin" id="Q3E-qd-mrG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dfp-KZ-Ri4" secondAttribute="trailing" id="SLb-HK-1d5"/>
+                            <constraint firstItem="d3N-B9-4D7" firstAttribute="top" secondItem="e0t-v5-FON" secondAttribute="bottom" constant="50" id="7dL-gX-tNF"/>
+                            <constraint firstItem="d3N-B9-4D7" firstAttribute="trailing" secondItem="cnm-TZ-VYd" secondAttribute="trailingMargin" id="KIh-1v-Ady"/>
+                            <constraint firstItem="d3N-B9-4D7" firstAttribute="leading" secondItem="cnm-TZ-VYd" secondAttribute="leadingMargin" id="QQs-Qf-ryl"/>
+                            <constraint firstItem="AFp-sa-C3p" firstAttribute="leading" secondItem="cnm-TZ-VYd" secondAttribute="leading" id="SEi-c1-k78"/>
+                            <constraint firstItem="AFp-sa-C3p" firstAttribute="top" secondItem="cnm-TZ-VYd" secondAttribute="top" id="Wbb-By-cEp"/>
+                            <constraint firstItem="cIs-LN-agj" firstAttribute="top" secondItem="AFp-sa-C3p" secondAttribute="bottom" id="flA-b0-7eK"/>
+                            <constraint firstAttribute="trailing" secondItem="AFp-sa-C3p" secondAttribute="trailing" id="opE-7K-SLq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="AFp-sa-C3p" id="Tmc-8K-lkc"/>
                         <outlet property="confirm" destination="jeK-FM-dxf" id="fEa-n8-SL7"/>
+                        <outlet property="logo" destination="eje-UZ-Vwv" id="aHD-aJ-6i6"/>
+                        <outlet property="logoTitle" destination="fG9-3g-qxu" id="dy4-Fx-cGA"/>
                         <outlet property="password" destination="adM-yV-hgK" id="gJy-Uj-m7G"/>
                         <outlet property="passwordConfirm" destination="vOE-9J-2WM" id="xFd-bc-YB4"/>
                         <outlet property="swapTitle" destination="nu5-rG-3cf" id="Juk-Hs-60p"/>
                         <outlet property="username" destination="tEi-gH-ESB" id="gp7-gy-nGE"/>
+                        <outlet property="verticalStack" destination="d3N-B9-4D7" id="CGd-Px-INz"/>
                         <segue destination="fun-wT-XEc" kind="show" identifier="HomeSegue" id="QFs-lJ-UKr"/>
                     </connections>
                 </viewController>
@@ -383,7 +536,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmI-lh-rCQ">
-                                        <rect key="frame" x="301" y="226" width="54" height="20.5"/>
+                                        <rect key="frame" x="301" y="226" width="54" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="RaL-lK-24u"/>
                                         </constraints>
@@ -392,7 +545,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-G7-Q2b">
-                                        <rect key="frame" x="20" y="256.5" width="335" height="32"/>
+                                        <rect key="frame" x="20" y="261" width="335" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="خرید اعتبار"/>
                                         <connections>
@@ -400,7 +553,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvH-ve-7PK">
-                                        <rect key="frame" x="20" y="298.5" width="335" height="32"/>
+                                        <rect key="frame" x="20" y="308" width="335" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="نظرات"/>
                                         <connections>
@@ -408,7 +561,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="758" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-Rm-FZt">
-                                        <rect key="frame" x="20" y="340.5" width="335" height="32"/>
+                                        <rect key="frame" x="20" y="355" width="335" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="راهنما"/>
                                         <connections>
@@ -416,7 +569,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-MS-7bg">
-                                        <rect key="frame" x="20" y="382.5" width="335" height="32"/>
+                                        <rect key="frame" x="20" y="402" width="335" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="درباره ما"/>
                                         <connections>
@@ -430,7 +583,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7W-A3-1UE">
-                                        <rect key="frame" x="20" y="424.5" width="335" height="32"/>
+                                        <rect key="frame" x="20" y="449" width="335" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="خروج"/>
                                         <connections>
@@ -947,7 +1100,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CloudTutorial" width="16" height="16"/>
+        <image name="Logo" width="16" height="16"/>
         <image name="No_Photo" width="16" height="16"/>
+        <image name="TutorialBackground" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QFs-lJ-UKr"/>

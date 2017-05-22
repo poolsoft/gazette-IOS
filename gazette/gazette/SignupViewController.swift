@@ -8,20 +8,73 @@
 
 import UIKit
 import HTTPStatusCodes
+import FontAwesome_swift
 class SignupViewController: UIViewController, ViewProtocol {
 
-	@IBOutlet weak var username: SkyFloatingLabelTextField!
+	@IBOutlet weak var username: SkyFloatingLabelTextFieldWithIcon!
 	
-	@IBOutlet weak var passwordConfirm: SkyFloatingLabelTextField!
-	@IBOutlet weak var password: SkyFloatingLabelTextField!
+	@IBOutlet weak var background: UIImageView!
+	@IBOutlet weak var logoTitle: UILabel!
+	@IBOutlet weak var logo: UIImageView!
+	@IBOutlet weak var passwordConfirm: SkyFloatingLabelTextFieldWithIcon!
+	@IBOutlet weak var password: SkyFloatingLabelTextFieldWithIcon!
 	@IBOutlet weak var confirm: UIButton!
 	@IBOutlet weak var swapTitle: UIButton!
 	var status = 0 // 0 -> signup, 1 -> login
 	var presenter: SignupPresenter?
+	
+	@IBOutlet weak var verticalStack: UIStackView!
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self)
+	}
+	
+	func keyboardWillShow(notification: NSNotification) {
+		
+		if (!logo.isHidden) {
+			logo.isHidden = true
+			logoTitle.isHidden = true
+		}
+		
+		
+		
+		
+		
+	}
+	func dismissKeyboard() {
+		username.resignFirstResponder()
+		password.resignFirstResponder()
+		passwordConfirm.resignFirstResponder()		
+	}
+	func keyboardWillHide() {
+		if logo.isHidden {
+			logo.isHidden = false
+			logoTitle.isHidden = false			
+		}
+		
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = SignupPresenter(self)
 		gotoSignupForm()
+		background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
+		username.iconFont = UIFont.fontAwesome(ofSize: 15)
+		username.iconText = String.fontAwesomeIcon(name: .envelopeO)
+		password.iconFont = UIFont.fontAwesome(ofSize: 15)
+		password.iconText = String.fontAwesomeIcon(name: .lock)
+		passwordConfirm.iconFont = UIFont.fontAwesome(ofSize: 15)
+		passwordConfirm.iconText = String.fontAwesomeIcon(name: .lock)
+		
+		
 		username.required = true
 		password.required = true
 		password.customValidator = {
@@ -52,7 +105,11 @@ class SignupViewController: UIViewController, ViewProtocol {
 		}
     }
 	func gotoLoginForm() {
-		swapTitle.setTitle("WantToSignup".localized, for: .normal)
+		let message = "WantToSignup".localized
+		let mutableString = NSMutableAttributedString(string: message)
+		mutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGray, range: (message as NSString).range(of: message))
+		mutableString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.Primary, range: (message as NSString).range(of: "SignupTitle".localized))
+		swapTitle.setAttributedTitle(mutableString, for: .normal)
 		confirm.setTitle("Login".localized, for: .normal)
 		status = 1
 		UIView.animate(withDuration: 0.5, animations: {
@@ -64,7 +121,11 @@ class SignupViewController: UIViewController, ViewProtocol {
 		}
 	}
 	func gotoSignupForm() {
-		swapTitle.setTitle("WantToLogin".localized, for: .normal)
+		let message = "WantToLogin".localized
+		let mutableString = NSMutableAttributedString(string: message)
+		mutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGray, range: (message as NSString).range(of: message))
+		mutableString.addAttribute(NSForegroundColorAttributeName, value: ColorPalette.Primary, range: (message as NSString).range(of: "Login".localized))
+		swapTitle.setAttributedTitle(mutableString, for: .normal)
 		confirm.setTitle("Signup".localized, for: .normal)
 		status = 0
 		UIView.animate(withDuration: 0.5, animations: {
