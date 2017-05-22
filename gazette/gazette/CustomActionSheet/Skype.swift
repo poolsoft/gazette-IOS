@@ -257,7 +257,7 @@ open class SkypeActionController: ActionController<SkypeCell, String, UICollecti
               return
             }
             context.addPath(path.cgPath)
-			ColorPalette.Accent.set()            
+			ColorPalette.Primary.set()
             context.fillPath()
         }
     }

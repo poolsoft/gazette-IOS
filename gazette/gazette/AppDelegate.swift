@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		pageControl.currentPageIndicatorTintColor = ColorPalette.DarkAccent
 		pageControl.backgroundColor = UIColor.clear
 		UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textAlignment = .right
-		UITabBar.appearance().tintColor = ColorPalette.Accent
+		UITabBar.appearance().tintColor = ColorPalette.DarkAccent
 		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName : AppFont.withSize(Dimensions.TextTiny)], for: UIControlState())
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
 		UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)

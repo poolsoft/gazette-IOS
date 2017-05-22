@@ -409,7 +409,7 @@
         <scene sceneID="WEc-Lx-KzQ">
             <objects>
                 <navigationController id="fun-wT-XEc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -421,7 +421,7 @@
             </objects>
             <point key="canvasLocation" x="-964" y="205"/>
         </scene>
-        <!--New-->
+        <!--ایجاد-->
         <scene sceneID="lQX-y0-r1K">
             <objects>
                 <viewController id="ikY-iT-Nnt" sceneMemberID="viewController">
@@ -434,7 +434,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="New" id="geL-ZO-WvD"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="ایجاد" image="NewTab" id="geL-ZO-WvD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97T-XP-bDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -494,7 +494,7 @@
             </objects>
             <point key="canvasLocation" x="-1066.4000000000001" y="927.88605697151434"/>
         </scene>
-        <!--Profile-->
+        <!--پروفایل-->
         <scene sceneID="9pR-sX-IT4">
             <objects>
                 <viewController id="mRT-2T-Cdo" customClass="ProfileViewController" customModule="gazette" customModuleProvider="target" sceneMemberID="viewController">
@@ -634,7 +634,7 @@
                             <constraint firstItem="rHb-Kb-SH7" firstAttribute="centerX" secondItem="QEf-pS-aNn" secondAttribute="centerX" id="eZi-py-52F"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Profile" id="VIB-9b-7Tp"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="پروفایل" image="ProfileTab" selectedImage="ProfileTab" id="VIB-9b-7Tp"/>
                     <connections>
                         <outlet property="credit" destination="Uz4-uO-UI8" id="PYg-3a-0vm"/>
                         <outlet property="email" destination="CBm-pF-NrP" id="78N-JH-3KT"/>
@@ -752,7 +752,26 @@
             </objects>
             <point key="canvasLocation" x="-144.80000000000001" y="1787.8560719640182"/>
         </scene>
-        <!--Validate-->
+        <!--خروج-->
+        <scene sceneID="uhL-9c-bd5">
+            <objects>
+                <viewController id="qln-Qc-shU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QPL-X2-wTy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gy5-ly-94e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8me-E8-hFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="خروج" image="ExitTab" id="ahe-Kc-Apm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxH-nc-FIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="1942"/>
+        </scene>
+        <!--چک-->
         <scene sceneID="78H-fM-0Gt">
             <objects>
                 <viewController id="CRA-v2-Z9n" sceneMemberID="viewController">
@@ -765,7 +784,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Validate" id="6X7-mH-n74"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="چک" image="ValidateTab" id="6X7-mH-n74"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1f-hK-qCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -935,7 +954,7 @@
             </objects>
             <point key="canvasLocation" x="380" y="-806"/>
         </scene>
-        <!--Home-->
+        <!--خانه-->
         <scene sceneID="60Y-Gy-dpX">
             <objects>
                 <viewController id="F0N-Ty-jom" customClass="HomeViewController" customModule="gazette" customModuleProvider="target" sceneMemberID="viewController">
@@ -1007,7 +1026,7 @@
                             <constraint firstAttribute="trailing" secondItem="3g9-dO-SL6" secondAttribute="trailing" id="zmD-8f-fiU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="VrG-7r-lE0"/>
+                    <tabBarItem key="tabBarItem" title="خانه" image="HomeTab" id="VrG-7r-lE0"/>
                     <connections>
                         <outlet property="tableView" destination="3g9-dO-SL6" id="kJq-6V-kth"/>
                         <segue destination="j0O-m1-BEC" kind="show" identifier="ShareSegue" id="p4F-jw-GkE"/>
@@ -1088,6 +1107,7 @@
                     <connections>
                         <segue destination="uAK-ft-0Ar" kind="show" identifier="NewSegue" id="IRC-I9-NnW"/>
                         <segue destination="OOy-Cm-onH" kind="show" identifier="ValidateSegue" id="Qul-JR-2hy"/>
+                        <segue destination="qln-Qc-shU" kind="relationship" relationship="viewControllers" id="DvP-hL-awf"/>
                         <segue destination="mRT-2T-Cdo" kind="relationship" relationship="viewControllers" id="Hs5-Ph-KuI"/>
                         <segue destination="CRA-v2-Z9n" kind="relationship" relationship="viewControllers" id="elY-rf-oEd"/>
                         <segue destination="ikY-iT-Nnt" kind="relationship" relationship="viewControllers" id="eIx-0m-iL3"/>
@@ -1101,9 +1121,14 @@
     </scenes>
     <resources>
         <image name="CloudTutorial" width="16" height="16"/>
+        <image name="ExitTab" width="21" height="21"/>
+        <image name="HomeTab" width="26" height="27"/>
         <image name="Logo" width="16" height="16"/>
+        <image name="NewTab" width="22" height="23"/>
         <image name="No_Photo" width="16" height="16"/>
+        <image name="ProfileTab" width="22" height="22"/>
         <image name="TutorialBackground" width="16" height="16"/>
+        <image name="ValidateTab" width="20" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QFs-lJ-UKr"/>
