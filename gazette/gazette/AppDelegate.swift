@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
@@ -73,14 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		var tokenString = ""
 		for i in 0..<deviceToken.count {
 			tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
-		}
-		if !CurrentUser.token.isEmpty {
-			RestHelper.request(.post, json: false, command: "updateCid", params: ["token":CurrentUser.token, "cid":tokenString], onComplete: { (_) in
-				
-			}) { (_, _) in
-				
-			}
-		}
+		}		
+		CurrentUser.cidToken = tokenString
+		ApnsUtil.updateCid()
 		
 		
 	}

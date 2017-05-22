@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E0DEFFD8C00D7535D305855 /* Pods_gazette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4C615E9AE0F49093A2370A /* Pods_gazette.framework */; };
+		841BC1101ED2C7300074D8D4 /* ApnsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BC10F1ED2C7300074D8D4 /* ApnsUtil.swift */; };
 		845A8DF61EAB2EE00006E5FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8DF51EAB2EE00006E5FF /* Constants.swift */; };
 		845A8DF91EAB2F2E0006E5FF /* IOSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8DF71EAB2F2E0006E5FF /* IOSUtil.swift */; };
 		845A8DFA1EAB2F2E0006E5FF /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A8DF81EAB2F2E0006E5FF /* RestHelper.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		1D4C615E9AE0F49093A2370A /* Pods_gazette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40216AD7851F12675555443D /* Pods-gazette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazette.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazette/Pods-gazette.release.xcconfig"; sourceTree = "<group>"; };
+		841BC10F1ED2C7300074D8D4 /* ApnsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApnsUtil.swift; sourceTree = "<group>"; };
 		845A8DF51EAB2EE00006E5FF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845A8DF71EAB2F2E0006E5FF /* IOSUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IOSUtil.swift; path = Util/IOSUtil.swift; sourceTree = "<group>"; };
 		845A8DF81EAB2F2E0006E5FF /* RestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestHelper.swift; path = Util/RestHelper.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				845A8E0D1EAB3A8D0006E5FF /* PhoneUtil.swift */,
 				845A8E0F1EAB3AAF0006E5FF /* ContactsProvider.swift */,
 				84E761B41EB5CA5500E0FE7D /* KMPlaceholderTextView.swift */,
+				841BC10F1ED2C7300074D8D4 /* ApnsUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				8466096C1EAB747B00FD532F /* TransactionCell.swift in Sources */,
 				847D4A6E1EACB69300766FA2 /* Events.swift in Sources */,
 				845A8E081EAB399B0006E5FF /* ImagePickerUtil.swift in Sources */,
+				841BC1101ED2C7300074D8D4 /* ApnsUtil.swift in Sources */,
 				846609751EAB8E0E00FD532F /* ValidatePresenter.swift in Sources */,
 				845A8E391EAB6D940006E5FF /* ActionData.swift in Sources */,
 			);

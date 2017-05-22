@@ -59,6 +59,22 @@ class CurrentUser: NSObject {
 			keychain.set(newValue, forKey: "picId")
 		}
 	}
+	static var cidToken: String {
+		get {
+			return keychain.get("cidToken") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "cidToken")
+		}
+	}
+	static var cidUploaded: String {
+		get {
+			return keychain.get("cidUploaded") ?? ""
+		}
+		set {
+			keychain.set(newValue, forKey: "cidUploaded")
+		}
+	}
 	static var credit: Double {
 		get {
 			var tmp: Double = 0
