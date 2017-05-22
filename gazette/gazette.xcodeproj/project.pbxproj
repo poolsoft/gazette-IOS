@@ -119,6 +119,7 @@
 		847D4A6B1EACAA9100766FA2 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		847D4A6D1EACB69300766FA2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		847D4A6F1EACB93C00766FA2 /* LastTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastTutorialViewController.swift; sourceTree = "<group>"; };
+		84913A831ED1793700EA25E2 /* gazette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gazette.entitlements; sourceTree = "<group>"; };
 		8499153A1EAC7BED000510B3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		8499153C1EAC7BF9000510B3 /* SharePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenter.swift; sourceTree = "<group>"; };
 		849915421EAC995A000510B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +278,7 @@
 		845C3F551EAB2A0C00BFD608 /* gazette */ = {
 			isa = PBXGroup;
 			children = (
+				84913A831ED1793700EA25E2 /* gazette.entitlements */,
 				84E761C91EB5DC1B00E0FE7D /* ImageLoader */,
 				845A8E3C1EAB6D990006E5FF /* CustomActionSheet */,
 				845A8E001EAB32550006E5FF /* Navbar */,
@@ -395,8 +397,14 @@
 				TargetAttributes = {
 					845C3F521EAB2A0C00BFD608 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = U6C28KYLPD;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -688,10 +696,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gazette/gazette.entitlements;
+				DEVELOPMENT_TEAM = U6C28KYLPD;
 				INFOPLIST_FILE = gazette/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.areatak.gazette;
+				PRODUCT_BUNDLE_IDENTIFIER = com.areatak.sabtshod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gazette/gazette-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -705,10 +715,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gazette/gazette.entitlements;
+				DEVELOPMENT_TEAM = U6C28KYLPD;
 				INFOPLIST_FILE = gazette/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.areatak.gazette;
+				PRODUCT_BUNDLE_IDENTIFIER = com.areatak.sabtshod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gazette/gazette-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

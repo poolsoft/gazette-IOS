@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fXm-OL-vOX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fXm-OL-vOX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
-                                <rect key="frame" x="16" y="20" width="343" height="154"/>
+                                <rect key="frame" x="16" y="20" width="343" height="164"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -214,7 +214,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
-                                        <rect key="frame" x="0.0" y="90" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="90" width="343" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="عضویت"/>
                                         <connections>
@@ -222,7 +222,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
-                                        <rect key="frame" x="0.0" y="122" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="127" width="343" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="قبلا ثبت نام کرده‌ام"/>
                                         <connections>
@@ -256,7 +256,7 @@
         <scene sceneID="WEc-Lx-KzQ">
             <objects>
                 <navigationController id="fun-wT-XEc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -290,7 +290,7 @@
         <!--Share View Controller-->
         <scene sceneID="Saf-3c-2kc">
             <objects>
-                <viewController id="j0O-m1-BEC" customClass="ShareViewController" customModule="gazette" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j0O-m1-BEC" customClass="ShareViewController" customModule="gazette" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qRh-F7-lPI"/>
                         <viewControllerLayoutGuide type="bottom" id="idN-iU-CwW"/>
@@ -383,7 +383,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmI-lh-rCQ">
-                                        <rect key="frame" x="301" y="226" width="54" height="25"/>
+                                        <rect key="frame" x="301" y="226" width="54" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="RaL-lK-24u"/>
                                         </constraints>
@@ -392,7 +392,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-G7-Q2b">
-                                        <rect key="frame" x="20" y="261" width="335" height="37"/>
+                                        <rect key="frame" x="20" y="256.5" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="خرید اعتبار"/>
                                         <connections>
@@ -400,7 +400,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvH-ve-7PK">
-                                        <rect key="frame" x="20" y="308" width="335" height="37"/>
+                                        <rect key="frame" x="20" y="298.5" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="نظرات"/>
                                         <connections>
@@ -408,7 +408,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="758" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-Rm-FZt">
-                                        <rect key="frame" x="20" y="355" width="335" height="37"/>
+                                        <rect key="frame" x="20" y="340.5" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="راهنما"/>
                                         <connections>
@@ -416,7 +416,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-MS-7bg">
-                                        <rect key="frame" x="20" y="402" width="335" height="37"/>
+                                        <rect key="frame" x="20" y="382.5" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="درباره ما"/>
                                         <connections>
@@ -430,7 +430,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7W-A3-1UE">
-                                        <rect key="frame" x="20" y="449" width="335" height="37"/>
+                                        <rect key="frame" x="20" y="424.5" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="خروج"/>
                                         <connections>
@@ -515,7 +515,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-a8-F4q">
-                                <rect key="frame" x="16" y="74" width="343" height="232"/>
+                                <rect key="frame" x="16" y="74" width="343" height="237"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-gL-6Bm" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -538,7 +538,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBo-Mw-Rq8">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="32"/>
+                                        <rect key="frame" x="0.0" y="80" width="343" height="37"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="برای تغییر رمز عبور اینجا را کلیک کنید"/>
                                         <connections>
@@ -546,7 +546,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAZ-JV-vf8" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="122" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="127" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -556,7 +556,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-4D-JJi" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="162" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="167" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -566,7 +566,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-2z-xXI">
-                                        <rect key="frame" x="0.0" y="202" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="207" width="343" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qpt-kU-JH7"/>
                                         </constraints>
@@ -643,13 +643,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-5B-dn2">
-                                <rect key="frame" x="16" y="126" width="343" height="78"/>
+                                <rect key="frame" x="16" y="126" width="343" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قیمت:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8A-DP-fGf">
-                                <rect key="frame" x="300" y="257" width="59" height="21"/>
+                                <rect key="frame" x="300" y="253" width="59" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="nsa-kO-Ir4"/>
                                 </constraints>
@@ -658,16 +658,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-Zn-FW1">
-                                <rect key="frame" x="16" y="257.5" width="276" height="20.5"/>
+                                <rect key="frame" x="16" y="251" width="276" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BCu-Ff-1J9">
-                                <rect key="frame" x="8" y="289" width="51" height="31"/>
+                                <rect key="frame" x="8" y="285" width="51" height="35"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از اعتبارم استفاده کن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-2o-ReK">
-                                <rect key="frame" x="82" y="294" width="277" height="21"/>
+                                <rect key="frame" x="82" y="290" width="277" height="25"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -711,10 +711,10 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="txB-l0-jwo">
-                                <rect key="frame" x="8" y="211.5" width="51" height="31"/>
+                                <rect key="frame" x="8" y="205" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در سرور داخلی ذخیره شود" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-hD-0Kt">
-                                <rect key="frame" x="82" y="217" width="277" height="20"/>
+                                <rect key="frame" x="82" y="208" width="277" height="25"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

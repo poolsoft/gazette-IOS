@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+import UserNotifications
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 	var window: UIWindow?
 
@@ -18,7 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		Dao.setup()
 		configAppearance()
+		configPushNotification(application)
 		return true
+	}
+	func configPushNotification(_ application: UIApplication) {
+		let notificationSettings = UIUserNotificationSettings(
+			types: [.badge, .sound, .alert], categories: nil)
+		if #available(iOS 10, *) {
+			UNUserNotificationCenter.current().delegate = self
+			UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (success, error) in
+				if (success) {
+					application.registerForRemoteNotifications()
+				}
+			})
+			
+		} else {
+			application.registerUserNotificationSettings(notificationSettings)
+		}
 	}
 	func configAppearance() {
 		let pageControl = UIPageControl.appearance()
@@ -36,12 +52,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UITextView.appearance().defaultFont = AppFont.font()
 		
 		AppDelegate.changeLang()
+		if  let statusBar = (UIApplication.shared.value(forKey: "statusBarWindow") as AnyObject).value(forKey: "statusBar") as? UIView {
+			statusBar.backgroundColor = ColorPalette.Actionbar
+		}		
 	}
 	static func changeLang() {
 		let targetLang = UserDefaults.standard.object(forKey: "selectedLanguage") as? String
 		IOSUtil.lang = targetLang ?? "Base"
 		Bundle.setLanguage(IOSUtil.lang)
 	}
+	
+	func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+		if notificationSettings.types != UIUserNotificationType() {
+			application.registerForRemoteNotifications()
+		}
+	}
+	
+	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+		let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
+		var tokenString = ""
+		for i in 0..<deviceToken.count {
+			tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+		}
+		if !CurrentUser.token.isEmpty {
+			RestHelper.request(.post, json: false, command: "updateCid", params: ["token":CurrentUser.token, "cid":tokenString], onComplete: { (_) in
+				
+			}) { (_, _) in
+				
+			}
+		}
+		
+		
+	}
+ 
+	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+		print("Failed to register:", error)
+	}
+	@available(iOS 10.0, *)
+	func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		notifProcess(response.notification.request.content.userInfo)
+	}
+	@available(iOS 10.0, *)
+	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		completionHandler([.alert, .badge, .sound])
+	}
+	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+		notifProcess(userInfo)
+	}
+	
+	func notifProcess(_ userInfo: [AnyHashable : Any]?) {
+		if userInfo != nil {
+			if let json = userInfo!["json"] as? String {
+				if let vc = UIApplication.shared.keyWindow?.rootViewController {
+					var presentedVC = vc.presentedViewController
+					var nextP = vc.presentedViewController
+					while (nextP != nil)
+					{
+						presentedVC = nextP
+						nextP = nextP!.presentedViewController
+						
+					}
+					if presentedVC != nil {
+						if presentedVC!.isKind(of: UINavigationController.self) {
+							presentedVC = (presentedVC as! UINavigationController).topViewController
+						}
+						if let data = json.data(using: .utf8) {
+							if let map = try! JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+								let transactionDao = TransactionDao()
+								let t = Transaction()
+								t.update(map)
+								if transactionDao.findByTxId(t.transactionId) == nil {
+									transactionDao.save({ (Void) -> Transaction in
+										return t
+									})
+									if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
+										presentedVC?.navigationController?.pushViewController(controller, animated: true)
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
