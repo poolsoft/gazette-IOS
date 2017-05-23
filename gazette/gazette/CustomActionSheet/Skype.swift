@@ -74,9 +74,23 @@ open class SkypeActionController: ActionController<SkypeCell, String, UICollecti
 
         onConfigureCellForAction = { cell, action, indexPath in
             cell.actionTitleLabel.text = action.data
-            cell.actionTitleLabel.textColor = .white
-			cell.actionTitleLabel.textAlignment = .right
+			cell.actionTitleLabel.font = AppFont.withSize(Dimensions.TextTiny)
+			cell.layer.borderColor = ColorPalette.TextGray.cgColor
+			if action.style == .cancel {
+				cell.actionTitleLabel.textColor = .white
+				cell.backgroundColor = ColorPalette.Primary
+				cell.layer.borderWidth = 0
+			} else {
+				cell.actionTitleLabel.textColor = ColorPalette.TextGray
+				cell.backgroundColor = ColorPalette.Accent
+				cell.layer.borderWidth = 0.4
+				
+			}
+			cell.actionTitleLabel.textAlignment = .center
             cell.alpha = action.enabled ? 1.0 : 0.5
+			
+			
+			
         }
     }
   
@@ -91,7 +105,7 @@ open class SkypeActionController: ActionController<SkypeCell, String, UICollecti
         collectionView.clipsToBounds = false
         collectionView.addSubview(contextView)
         collectionView.sendSubview(toBack: contextView)
-        
+		
         
         normalAnimationRect = UIView(frame: CGRect(x: 0, y: view.bounds.height/2, width: 30, height: 30))
         normalAnimationRect.isHidden = true
@@ -257,7 +271,7 @@ open class SkypeActionController: ActionController<SkypeCell, String, UICollecti
               return
             }
             context.addPath(path.cgPath)
-			ColorPalette.Primary.set()
+			UIColor.clear.set()
             context.fillPath()
         }
     }

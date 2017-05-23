@@ -13,6 +13,7 @@ class NewPresenter: PresenterProtocol {
 	var path: URL! {
 		didSet {
 			localHash = ""
+			file = nil
 		}
 	}
 	fileprivate var file: FileHandle?

@@ -11,34 +11,23 @@ import PKHUD
 class ValidateViewController: UIViewController, ViewProtocol {
 	
 	
-	@IBOutlet weak var filename: UILabel!
+	@IBOutlet weak var qrCodeImage: UIImageView!
 
-	@IBOutlet weak var hashLabel: UILabel!
+	@IBOutlet weak var transactionView: TransactionView!
 	
-	
-	
-	
-	var path: URL!
-	var presenter: ValidatePresenter?
+	var transaction: Transaction!
+	var presenter: SharePresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
-		presenter = ValidatePresenter(self)
-		presenter?.path = path
+		presenter = SharePresenter(self)
+		presenter?.entity = transaction
 		reload()
     }
 	func reload() {
-		filename.text = presenter?.fileName()
-		hashLabel.text = presenter?.hash()
+		transactionView.transactionEntity = transaction
+		qrCodeImage.image = presenter?.qrCode()
 	}
 
     
-	@IBAction func onTaiid(_ sender: Any) {
-		HUD.show(.progress)
-		presenter?.taid({ (data) in
-			HUD.flash(.labeledSuccess(title: "foundTransaction".localized, subtitle: (data as? [String: Any])?["txId"] as? String ?? ""), delay: 2.0)
-			
-		}, { (error, data) in
-			HUD.flash(.labeledError(title: "notFoundTransaction".localized, subtitle: nil), delay: 2.0)
-		})
-	}
+	
 }

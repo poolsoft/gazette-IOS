@@ -64,6 +64,7 @@ class ProfilePresenter: PresenterProtocol {
 		CurrentUser.credit = 0
 		CurrentUser.passwordHash = ""
 		CurrentUser.picId = ""
+		TransactionDao().deleteAll()
 	}
 	func requestUpdate() {
 		if IOSUtil.lock("requestUpdateProfile") {

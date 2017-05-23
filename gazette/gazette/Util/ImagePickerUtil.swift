@@ -13,6 +13,7 @@ import XLActionController
 class ImagePickerUtil: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	let imagePicker = UIImagePickerController()
 	var onPicSaved: CallBack?
+	var onCancel: CallBack?
 	var onProfileSave: ((String, String) -> ())?
 	var vc: UIViewController?
 	var sourceView: UIView?
@@ -41,7 +42,7 @@ class ImagePickerUtil: NSObject, UIImagePickerControllerDelegate, UINavigationCo
 //		}))
 //		alertController.addAction(UIAlertAction(title: "Cancel".localized, style: UIAlertActionStyle.cancel, handler: { (action) in
 //		}))
-		let alertController = SkypeActionController()		
+		let alertController = TweetbotActionController()
 		alertController.popoverPresentationController?.sourceView = sourceView
 		if showCamera {
 			alertController.addAction(Action.init("Camera".localized, style: .default, handler: { (action) in
@@ -61,7 +62,9 @@ class ImagePickerUtil: NSObject, UIImagePickerControllerDelegate, UINavigationCo
 			self.imagePicker.mediaTypes = [kUTTypeImage as String]
 			vc.present(self.imagePicker, animated: true, completion: nil)
 		}))
+		alertController.addSection(Section())
 		alertController.addAction(Action.init("Cancel".localized, style: .cancel, handler: { (action) in
+			self.onCancel?(nil)
 		}))
 		
 		vc.present(alertController, animated: true, completion: nil)

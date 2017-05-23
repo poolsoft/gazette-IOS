@@ -8,7 +8,7 @@
 
 import UIKit
 import UserNotifications
-
+import PopupDialog
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
@@ -38,16 +38,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		}
 	}
 	func configAppearance() {
+		let dialogAppearance = PopupDialogDefaultView.appearance()
+		dialogAppearance.backgroundColor      = ColorPalette.Primary
+		dialogAppearance.titleFont            = AppFont.withSize(Dimensions.TextSmall)
+		dialogAppearance.titleColor           = UIColor.white
+		dialogAppearance.titleTextAlignment   = .center
+		dialogAppearance.messageFont          = AppFont.withSize(Dimensions.TextTiny)
+		dialogAppearance.messageColor         = UIColor.white
+		dialogAppearance.messageTextAlignment = .center
+		let buttonAppearance = DefaultButton.appearance()
+		buttonAppearance.titleFont      = AppFont.withSize(Dimensions.TextTiny)
+		buttonAppearance.titleColor     = ColorPalette.TextGray
+		buttonAppearance.buttonColor    = UIColor.white
+		CancelButton.appearance().titleColor = buttonAppearance.titleColor
+
+		
+		
+		
 		let pageControl = UIPageControl.appearance()
 		pageControl.pageIndicatorTintColor = ColorPalette.Accent
 		pageControl.currentPageIndicatorTintColor = ColorPalette.DarkAccent
 		pageControl.backgroundColor = UIColor.clear
 		UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textAlignment = .right
 		UITabBar.appearance().tintColor = ColorPalette.DarkAccent
-		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName : AppFont.withSize(Dimensions.TextTiny)], for: UIControlState())
+		UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName : AppFont.withSize(Dimensions.TextVeryTiny)], for: UIControlState())
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
 		UILabel.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = AppFont.withSize(Dimensions.TextSmall)
-		
+		// cancel in uisearchbar
+		UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSFontAttributeName : AppFont.withSize(Dimensions.TextTiny), NSForegroundColorAttributeName : ColorPalette.Primary], for: .normal)
+
 		UILabel.appearance(whenContainedInInstancesOf: [UIButton.self]).defaultFont = AppFont.font()
 		UITextField.appearance().defaultFont = AppFont.font()
 		UITextView.appearance().defaultFont = AppFont.font()
@@ -115,16 +134,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 						if let data = json.data(using: .utf8) {
 							if let map = try! JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
 								let transactionDao = TransactionDao()
-								let t = Transaction()
-								t.update(map)
-								if transactionDao.findByTxId(t.transactionId) == nil {
+								var t = transactionDao.findByTxId(map["txId"] as? String ?? "")
+								if t == nil {
+									t = Transaction()
+									t!.update(map)
 									transactionDao.save({ (Void) -> Transaction in
-										return t
+										return t!
 									})
-									if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShareViewController") as? ShareViewController {
-										presentedVC?.navigationController?.pushViewController(controller, animated: true)
-									}
 								}
+								
+								if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ValidateViewController") as? ValidateViewController {
+									controller.transaction = t
+									presentedVC?.navigationController?.pushViewController(controller, animated: true)
+								}
+								
 							}
 						}
 					}

@@ -15,6 +15,9 @@ class TransactionDao: Dao<Transaction> {
 		return realm.objects(Transaction.self).filter(predicate).sorted(byKeyPath: "transactionDate", ascending: false)
 	}
 	func findByTxId(_ txId: String) -> Transaction? {
+		if txId.isEmpty {
+			return nil
+		}
 		let realm = try! Realm()
 		let predicate = NSPredicate(format: "transactionId == %@", txId)
 		return realm.objects(Transaction.self).filter(predicate).first

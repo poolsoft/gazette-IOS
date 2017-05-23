@@ -10,7 +10,7 @@ import UIKit
 class Constants: NSObject {		
 	
 	static let STUB = false
-	static let SERVER_ADDRESS = "http://sabtshod.com/"
+	static let SERVER_ADDRESS = "http://192.168.1.6:8080/"
 	static let useSSL = false
 	
 }

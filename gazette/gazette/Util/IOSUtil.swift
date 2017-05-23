@@ -10,6 +10,7 @@ import UIKit
 import ImageIO
 import Photos
 import MessageUI
+import PopupDialog
 class IOSUtil: NSObject {
 	static let iosSemaphore = DispatchSemaphore(value: 0)
 	static var lang = "Base" {
@@ -268,10 +269,15 @@ class IOSUtil: NSObject {
 			
 		}, seconds: 0)
 	}
-	static func alertTwoChoice(_ what: String, controller: UIViewController, positiveAction: String, negativeAction: String, positiveHandler: ((UIAlertAction) -> Void)?, negativeHandler: ((UIAlertAction) -> Void)?) {
-		let alert = UIAlertController(title: "", message: what, preferredStyle: UIAlertControllerStyle.alert)
-		alert.addAction(UIAlertAction(title: positiveAction, style: UIAlertActionStyle.default, handler: positiveHandler))
-		alert.addAction(UIAlertAction(title: negativeAction, style: UIAlertActionStyle.default, handler: negativeHandler))
+	static func alertTwoChoice(_ what: String, controller: UIViewController, positiveAction: String, negativeAction: String, positiveHandler: (() -> Void)?, negativeHandler: (() -> Void)?) {
+		let alert = PopupDialog(title: nil, message: what)
+		alert.buttonAlignment = .horizontal
+		
+		alert.addButtons([CancelButton(title: negativeAction, action: {
+			negativeHandler?()
+		}), DefaultButton(title: positiveAction, action: { 
+			positiveHandler?()
+		})])
 		controller.present(alert, animated: true, completion: nil)
 	}
 	static func getFolderSize(_ folderPath: String) -> Int { // Returns in Bytes

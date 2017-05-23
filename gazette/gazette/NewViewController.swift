@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 import HTTPStatusCodes
-class NewViewController: UIViewController, ViewProtocol {
+class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
 
 	@IBOutlet weak var fileName: UILabel!
 	@IBOutlet weak var date: UILabel!
@@ -20,13 +20,32 @@ class NewViewController: UIViewController, ViewProtocol {
 	@IBOutlet weak var credit: UILabel!
 	@IBOutlet weak var desc: UITextView!
 	
+	@IBOutlet weak var boxHeight: NSLayoutConstraint!
 	var path: URL?
 	var presenter: NewPresenter?
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+	}
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self)
+	}
+	func keyboardWillShow() {
+		boxHeight.constant = 50
+	}
+	func keyboardWillHide() {
+		boxHeight.constant = 200
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = NewPresenter(self)
 		presenter?.path = path!
 		reload()
+		desc.delegate = self
+		
     }
 	func reload() {
 		fileName.text = presenter?.fileName()
@@ -48,6 +67,13 @@ class NewViewController: UIViewController, ViewProtocol {
 			}
 		})
 	}
-    
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if (text == "\n") {
+			textView.resignFirstResponder()
+		}
+		return true
+	}
+	
+	
 
 }

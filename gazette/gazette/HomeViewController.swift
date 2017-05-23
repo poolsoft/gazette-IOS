@@ -54,18 +54,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
+		let transactionView = cell.transactionView!
 		let transaction = presenter!.transactions![indexPath.row]
-		cell.firstLine.text = transaction.transactionId
-		if transaction.transactionDate != nil {
-			cell.secondLine.text = DateUtil.relativeDiffFromNow(transaction.transactionDate!)
-		} else {
-			cell.secondLine.text = ""
-		}
-		if transaction.status == 0 { // Pending
-			cell.statusImage.image = nil
-		} else {	// Confirmed
-			cell.statusImage.image = nil
-		}
+		transactionView.transactionEntity = transaction
+//		let bgColorView = UIView()
+//		bgColorView.backgroundColor = ColorPalette.Primary
+//		cell.selectedBackgroundView = bgColorView
 		return cell
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -87,8 +81,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ShareSegue" {
-			let controller = segue.destination as! ShareViewController
-			controller.entity = sender as! Transaction
+			let controller = segue.destination as! ValidateViewController
+			controller.transaction = sender as! Transaction
 		}
 	}
 }

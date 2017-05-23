@@ -13,6 +13,7 @@ class ValidatePresenter: PresenterProtocol {
 	var path: URL! {
 		didSet {
 			localHash = ""
+			file = nil
 		}
 	}
 	fileprivate var file: FileHandle?
@@ -47,7 +48,7 @@ class ValidatePresenter: PresenterProtocol {
 		return localHash
 	}
 	
-	func taid(_ onComplete: @escaping CallBack, _ onError: @escaping ErrorCallBack) {
+	func validate(_ onComplete: @escaping CallBack, _ onError: @escaping ErrorCallBack) {
 		RestHelper.request(.post, json: false, command: "validateTnxBydataHash", params: ["dataHash":hash()], onComplete: { (data) in
 			onComplete(data)
 		}) { (error, data) in
