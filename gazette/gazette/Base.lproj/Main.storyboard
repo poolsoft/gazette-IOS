@@ -780,23 +780,14 @@
                                 <color key="textColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BCu-Ff-1J9">
-                                <rect key="frame" x="26" y="446" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="از اعتبارم استفاده کن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-2o-ReK">
-                                <rect key="frame" x="75" y="449" width="290" height="25"/>
-                                <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-b1-SLb">
-                                <rect key="frame" x="26" y="481" width="249" height="17"/>
+                                <rect key="frame" x="26" y="451" width="249" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مبلغ اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-AE-SU4">
-                                <rect key="frame" x="295" y="479" width="70" height="21"/>
+                                <rect key="frame" x="295" y="449" width="70" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="KVL-Pm-OxP"/>
                                 </constraints>
@@ -883,7 +874,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AL-bf-rgy">
-                                <rect key="frame" x="12" y="510" width="351" height="1"/>
+                                <rect key="frame" x="12" y="480" width="351" height="1"/>
                                 <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dfL-e8-E2o"/>
@@ -905,9 +896,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ery-bC-e92" secondAttribute="trailing" id="1He-DB-M9Z"/>
-                            <constraint firstItem="PKB-2o-ReK" firstAttribute="trailing" secondItem="pNW-hD-0Kt" secondAttribute="trailing" id="1z6-uL-BUI"/>
                             <constraint firstItem="u8A-DP-fGf" firstAttribute="trailing" secondItem="pNW-hD-0Kt" secondAttribute="trailing" id="348-o5-qaw"/>
-                            <constraint firstItem="PKB-2o-ReK" firstAttribute="top" secondItem="3D9-tB-rKZ" secondAttribute="bottom" constant="10" id="7eD-Td-Zjs"/>
                             <constraint firstItem="Ery-bC-e92" firstAttribute="leading" secondItem="8W1-fG-5ip" secondAttribute="leading" id="8K8-gJ-Bsc"/>
                             <constraint firstItem="pNW-hD-0Kt" firstAttribute="leading" secondItem="txB-l0-jwo" secondAttribute="trailing" constant="10" id="9k7-uc-SeW"/>
                             <constraint firstItem="8AL-bf-rgy" firstAttribute="leading" secondItem="3D9-tB-rKZ" secondAttribute="leading" id="AZY-6W-fnw"/>
@@ -918,13 +907,10 @@
                             <constraint firstItem="txB-l0-jwo" firstAttribute="leading" secondItem="8W1-fG-5ip" secondAttribute="leadingMargin" constant="10" id="FgO-19-dYR"/>
                             <constraint firstItem="x1M-AE-SU4" firstAttribute="leading" secondItem="5cL-b1-SLb" secondAttribute="trailing" constant="20" id="H5f-7a-RaH"/>
                             <constraint firstItem="pNW-hD-0Kt" firstAttribute="centerY" secondItem="txB-l0-jwo" secondAttribute="centerY" id="JbV-SD-oM0"/>
-                            <constraint firstItem="x1M-AE-SU4" firstAttribute="top" secondItem="PKB-2o-ReK" secondAttribute="bottom" constant="5" id="JyV-TH-g3y"/>
                             <constraint firstItem="x1M-AE-SU4" firstAttribute="trailing" secondItem="u8A-DP-fGf" secondAttribute="trailing" id="LHF-ss-G99"/>
-                            <constraint firstItem="PKB-2o-ReK" firstAttribute="leading" secondItem="BCu-Ff-1J9" secondAttribute="trailing" id="LZx-Ic-yKX"/>
                             <constraint firstAttribute="trailing" secondItem="pNW-hD-0Kt" secondAttribute="trailing" constant="10" id="Ley-R1-OlV"/>
                             <constraint firstItem="5cL-b1-SLb" firstAttribute="centerY" secondItem="x1M-AE-SU4" secondAttribute="centerY" id="NCt-iA-rtc"/>
                             <constraint firstItem="GRa-Lc-0RF" firstAttribute="leading" secondItem="8W1-fG-5ip" secondAttribute="leading" constant="12" id="OYq-iE-jr4"/>
-                            <constraint firstItem="BCu-Ff-1J9" firstAttribute="centerY" secondItem="PKB-2o-ReK" secondAttribute="centerY" id="QKv-JM-0RR"/>
                             <constraint firstItem="pNW-hD-0Kt" firstAttribute="top" secondItem="9Hz-Sf-QZg" secondAttribute="bottom" constant="5" id="TAS-J6-8Af"/>
                             <constraint firstItem="fa1-Zn-FW1" firstAttribute="trailing" secondItem="5cL-b1-SLb" secondAttribute="trailing" id="TLH-DN-AZV"/>
                             <constraint firstItem="3D9-tB-rKZ" firstAttribute="top" secondItem="u8A-DP-fGf" secondAttribute="bottom" constant="10" id="UUT-uJ-SOX"/>
@@ -939,10 +925,10 @@
                             <constraint firstItem="KlA-d7-rFk" firstAttribute="top" secondItem="GRa-Lc-0RF" secondAttribute="bottom" constant="8" id="e6o-IF-SMZ"/>
                             <constraint firstItem="9Hz-Sf-QZg" firstAttribute="trailing" secondItem="3D9-tB-rKZ" secondAttribute="trailing" id="n9q-f7-olw"/>
                             <constraint firstItem="1eh-9T-irc" firstAttribute="top" secondItem="Vbj-EN-YbI" secondAttribute="bottom" id="ppO-yP-Wu2"/>
+                            <constraint firstItem="x1M-AE-SU4" firstAttribute="top" secondItem="3D9-tB-rKZ" secondAttribute="bottom" constant="10" id="scd-Ep-n68"/>
                             <constraint firstItem="d10-Rd-dih" firstAttribute="leading" secondItem="8W1-fG-5ip" secondAttribute="leading" constant="10" id="uE5-vy-5Vq"/>
                             <constraint firstItem="9Hz-Sf-QZg" firstAttribute="leading" secondItem="3D9-tB-rKZ" secondAttribute="leading" id="ufE-ZR-0xc"/>
                             <constraint firstItem="fa1-Zn-FW1" firstAttribute="leading" secondItem="5cL-b1-SLb" secondAttribute="leading" id="usr-wB-sfC"/>
-                            <constraint firstItem="BCu-Ff-1J9" firstAttribute="leading" secondItem="txB-l0-jwo" secondAttribute="leading" id="wcA-Z0-EBA"/>
                             <constraint firstItem="8AL-bf-rgy" firstAttribute="trailing" secondItem="3D9-tB-rKZ" secondAttribute="trailing" id="yFe-yg-f86"/>
                             <constraint firstAttribute="trailing" secondItem="GRa-Lc-0RF" secondAttribute="trailing" constant="12" id="zuE-y4-e9p"/>
                         </constraints>
@@ -956,7 +942,6 @@
                         <outlet property="hashLabel" destination="eWh-5B-dn2" id="omB-jO-kBL"/>
                         <outlet property="localSave" destination="txB-l0-jwo" id="lCH-5m-cmV"/>
                         <outlet property="price" destination="fa1-Zn-FW1" id="jka-2U-6ef"/>
-                        <outlet property="useCredit" destination="BCu-Ff-1J9" id="2WB-AZ-Jgy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIH-Bp-RvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

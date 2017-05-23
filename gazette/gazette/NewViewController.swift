@@ -15,7 +15,6 @@ class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
 	@IBOutlet weak var date: UILabel!
 	@IBOutlet weak var hashLabel: UILabel!
 	@IBOutlet weak var localSave: UISwitch!
-	@IBOutlet weak var useCredit: UISwitch!
 	@IBOutlet weak var price: UILabel!
 	@IBOutlet weak var credit: UILabel!
 	@IBOutlet weak var desc: UITextView!
@@ -57,7 +56,7 @@ class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
 	}
 	@IBAction func onTaiid(_ sender: Any) {
 		HUD.show(.progress)
-		presenter?.taid(desc.text, useCredit.isOn, localSave.isOn, onComplete: { (data) in
+		presenter?.taid(desc.text, localSave.isOn, onComplete: { (data) in
 			HUD.flash(.success, delay: 0.5)
 		}, onError: { (error, data) in
 			if error == HTTPStatusCode.alreadyReported.rawValue {

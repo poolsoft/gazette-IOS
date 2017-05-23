@@ -58,7 +58,7 @@ class NewPresenter: PresenterProtocol {
 	func desc() -> String {
 		return ""
 	}
-	func taid(_ desc: String, _ useCredit: Bool, _ localSave: Bool, onComplete: @escaping CallBack, onError: @escaping ErrorCallBack) {
+	func taid(_ desc: String, _ localSave: Bool, onComplete: @escaping CallBack, onError: @escaping ErrorCallBack) {
 		if localSave {
 			RestHelper.upload("createTnx", params: ["token":CurrentUser.token, "hash":hash(), "desc": desc], fileUrl: path, fileParam: "uploadedFile", onComplete: { (data) in
 				onComplete(data)
