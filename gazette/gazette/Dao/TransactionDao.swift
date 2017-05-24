@@ -14,6 +14,11 @@ class TransactionDao: Dao<Transaction> {
 		let predicate = NSPredicate(format: "transactionId contains[c] %@ or desc contains[c] %@", query, query)
 		return realm.objects(Transaction.self).filter(predicate).sorted(byKeyPath: "transactionDate", ascending: false)
 	}
+	func findAllNotConfirmed() -> Results<Transaction> {
+		let realm = try! Realm()
+		let predicate = NSPredicate(format: "status = 0")
+		return realm.objects(Transaction.self).filter(predicate)
+	}
 	func findByTxId(_ txId: String) -> Transaction? {
 		if txId.isEmpty {
 			return nil

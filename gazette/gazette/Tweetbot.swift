@@ -23,7 +23,7 @@ open class TweetbotCell: ActionCell {
 		actionTitleLabel?.textAlignment = .center
 		backgroundColor = .darkGray
 		let backgroundView = UIView()
-		backgroundView.backgroundColor = UIColor(red: 0.31, green: 0.42, blue: 0.54, alpha: 1.0)
+		backgroundView.backgroundColor = ColorPalette.DarkAccent
 		selectedBackgroundView = backgroundView
 	}
 }

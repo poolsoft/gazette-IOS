@@ -31,3 +31,7 @@
 "notFoundTransaction" = "تراکنشی با چنین مشخصاتی یافت نشد";
 "Description" = "توضیحات";
 "NoComment" = "بدون شرح";
+"Rial" = " ریال ";
+"Sabtshod" = "ثبت شد";
+"NewTransaction" = "ثبت";
+"ValidTransaction" = "اعتبار سنجی";

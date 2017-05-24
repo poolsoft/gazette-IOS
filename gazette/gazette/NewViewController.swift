@@ -22,11 +22,15 @@ class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
 	@IBOutlet weak var boxHeight: NSLayoutConstraint!
 	var path: URL?
 	var presenter: NewPresenter?
+	var profilePresenter: ProfilePresenter?
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		self.navigationItem.title = "NewTransaction".localized
 		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+		presenter?.updateTxFee()
+		profilePresenter?.requestUpdate()
 	}
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -41,6 +45,7 @@ class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = NewPresenter(self)
+		profilePresenter = ProfilePresenter(self)
 		presenter?.path = path!
 		reload()
 		desc.delegate = self
@@ -50,14 +55,26 @@ class NewViewController: UIViewController, ViewProtocol, UITextViewDelegate {
 		fileName.text = presenter?.fileName()
 		date.text = presenter?.date()
 		hashLabel.text = presenter?.hash()
-		price.text = presenter?.price()
-		credit.text = presenter?.credit()
+		let priceNumber = StringUtil.addSeparator(presenter!.price() as NSNumber)
+		let rial = "Rial".localized
+		var statement = priceNumber + rial
+		let priceText = NSMutableAttributedString(string: statement)
+		priceText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextTiny), range: (statement as NSString).range(of: statement))
+		priceText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextVeryTiny), range: (statement as NSString).range(of: rial))
+		price.attributedText = priceText
+		let creditNumber = StringUtil.addSeparator(presenter!.credit() as NSNumber)		
+		statement = creditNumber + rial
+		let creditText = NSMutableAttributedString(string: statement)
+		creditText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextTiny), range: (statement as NSString).range(of: statement))
+		creditText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextVeryTiny), range: (statement as NSString).range(of: rial))
+		credit.attributedText = creditText
 		desc.text = presenter?.desc()		
 	}
 	@IBAction func onTaiid(_ sender: Any) {
 		HUD.show(.progress)
 		presenter?.taid(desc.text, localSave.isOn, onComplete: { (data) in
 			HUD.flash(.success, delay: 0.5)
+			self.navigationController?.popViewController(animated: true)
 		}, onError: { (error, data) in
 			if error == HTTPStatusCode.alreadyReported.rawValue {
 				HUD.flash(.label("foundTransaction".localized), delay: 2.0)

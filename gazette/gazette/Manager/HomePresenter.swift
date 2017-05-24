@@ -21,7 +21,7 @@ class HomePresenter: PresenterProtocol {
 	func requestTransactions() {
 		requestLocalTransactions()
 		if IOSUtil.lock("requestTransaction") {
-			RestHelper.request(.post, json: false, command: "listUserTransactions", params: ["token":CurrentUser.token, "lastDate": (transactionDao.findAll().sorted(byKeyPath: "transactionDate", ascending: false).first?.transactionDate?.timeIntervalSince1970 ?? 0 * 1000)], onComplete: { (data) in
+			RestHelper.request(.post, json: false, command: "listUserTransactions", params: ["token":CurrentUser.token, "lastDate": (transactionDao.findAllNotConfirmed().sorted(byKeyPath: "transactionDate", ascending: true).first?.transactionDate?.timeIntervalSince1970 ?? 0 * 1000)], onComplete: { (data) in
 				IOSUtil.unLock("requestTransaction")
 				let map = data as! [String: [String: Any]]
 				for entity in map {
@@ -52,6 +52,7 @@ class HomePresenter: PresenterProtocol {
 			return transaction
 		})
 	}
+	
 	
 	func searchTransaction(_ query: String) {
 		if query.isEmpty {

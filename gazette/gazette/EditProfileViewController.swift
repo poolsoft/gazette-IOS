@@ -8,21 +8,29 @@
 
 import UIKit
 import PKHUD
-class EditProfileViewController: UIViewController, ViewProtocol {
+class EditProfileViewController: UIViewController, ViewProtocol, UITextFieldDelegate {
 	@IBOutlet weak var name: SkyFloatingLabelTextField!
 	
+	@IBOutlet weak var profileImage: UIImageView!
 	@IBOutlet weak var lastname: SkyFloatingLabelTextField!
 	
+	@IBOutlet weak var email: UILabel!
+	@IBOutlet weak var fullName: UILabel!
 	@IBOutlet weak var changeStatusButton: UIButton!
 	
 	@IBOutlet weak var confirmPassword: SkyFloatingLabelTextField!
 	@IBOutlet weak var password: SkyFloatingLabelTextField!
 	var presenter: ProfilePresenter?
 	var status = 0 // 0 -> edit, 1 -> changePass
+	let imagePicker = ImagePickerUtil()
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = ProfilePresenter(self)
 		reload()
+		name.delegate = self
+		lastname.delegate = self
+		password.delegate = self
+		confirmPassword.delegate = self
 		password.required = true
 		password.customValidator = {
 			if self.confirmPassword.isValid().0 {
@@ -48,8 +56,30 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 				}
 			}
 		}
+		
+		imagePicker.onPicSaved = { (path) in
+			HUD.show(.progress)
+			self.presenter!.editProfile(name: CurrentUser.name, lastname: CurrentUser.lastname, passwordHash: CurrentUser.passwordHash, pic: URL(fileURLWithPath: path as! String), onComplete: { (data) in
+				HUD.flash(.success, delay: 0.5)
+				IOSUtil.postDelay({
+					self.profileImage.load.removeCache()
+					self.reload()
+				}, seconds: 0)
+				
+			}, onError: { (error, data) in
+				HUD.flash(.error, delay: 0.5)
+			})
+		}
+		
 		gotoEditForm()
     }
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.navigationItem.title = "Profile".localized
+		profileImage.layer.cornerRadius = min(profileImage.frame.width, profileImage.frame.height)/2
+		profileImage.layer.borderColor = UIColor.white.cgColor
+		profileImage.layer.borderWidth = 2
+	}
 	func gotoEditForm() {
 		status = 0
 		UIView.animate(withDuration: 0.5, animations: {
@@ -88,6 +118,11 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 		}
 	}
 	func reload() {
+		if let url = presenter!.myPicUrl() {
+			profileImage.load.request(with: url)
+		}
+		fullName.text = presenter!.myName() + " " + presenter!.myLastname()
+		email.text = presenter!.myEmail()
 		name.text = CurrentUser.name
 		lastname.text = CurrentUser.lastname
 	}
@@ -98,6 +133,7 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 			HUD.show(.progress)
 			presenter?.editProfile(name: name.unwrappedCleanText, lastname: lastname.unwrappedCleanText, passwordHash: CurrentUser.passwordHash, onComplete: { (data) in
 				HUD.flash(.success, delay: 0.5)
+				self.navigationController?.popViewController(animated: true)
 			}, onError: { (error, data) in
 				HUD.flash(.error, delay: 0.5)
 			})
@@ -111,6 +147,7 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 			HUD.show(.progress)
 			presenter?.editProfile(name: name.unwrappedCleanText, lastname: lastname.unwrappedCleanText, passwordHash: CryptoUtil.sha256(password.unwrappedText), onComplete: { (data) in
 				HUD.flash(.success, delay: 0.5)
+				self.navigationController?.popViewController(animated: true)
 			}, onError: { (error, data) in
 				HUD.flash(.error, delay: 0.5)
 			})
@@ -119,5 +156,13 @@ class EditProfileViewController: UIViewController, ViewProtocol {
 
 	@IBAction func onChangeStatus(_ sender: Any) {
 		gotoChangePassForm()
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return false
+	}
+	@IBAction func onProfilePicClicked(_ sender: Any) {
+		imagePicker.showImagePickerOptions(self)
 	}
 }

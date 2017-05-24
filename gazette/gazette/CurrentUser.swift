@@ -89,6 +89,20 @@ class CurrentUser: NSObject {
 			keychain.set(data, forKey: "credit")
 		}
 	}
+	static var txFee: Double {
+		get {
+			var tmp: Double = 0
+			(keychain.getData("txFee") as NSData?)?.getBytes(&tmp, length: MemoryLayout.size(ofValue: tmp))
+			return tmp
+		}
+		set {
+			var value = newValue
+			let data = withUnsafePointer(to: &value) {
+				Data(bytes: UnsafePointer($0), count: MemoryLayout.size(ofValue: newValue))
+			}
+			keychain.set(data, forKey: "txFee")
+		}
+	}
 	static func update(_ userInfo: [String: Any], changeToken: Bool = true) {
 		if changeToken {
 			CurrentUser.token = userInfo["token"] as? String ?? ""

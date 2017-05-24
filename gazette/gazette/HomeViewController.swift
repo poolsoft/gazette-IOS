@@ -14,10 +14,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	@IBOutlet weak var tableView: UITableView!
 	
 	var presenter: HomePresenter?
+	var newPresenter: NewPresenter?
 	var searchController: UISearchController?
 	override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = HomePresenter(self)
+		newPresenter = NewPresenter(self)
         tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
@@ -28,14 +30,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		searchController?.searchBar.sizeToFit()
 		searchController?.searchBar.placeholder = "Search".localized
 		searchController?.searchBar.setValue("Cancel".localized, forKey:"_cancelButtonText")
-		
+		newPresenter?.updateTxFee()
 		
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.tabBarController?.navigationItem.title = "Home".localized
+		self.tabBarController?.navigationItem.title = "Sabtshod".localized
 		(self.tabBarController?.navigationItem as! CustomNavigationItem).showNone()
 		presenter?.requestTransactions()
+		
 	}
 	func updateSearchResults(for searchController: UISearchController) {
 		let search = searchController.searchBar.text ?? ""

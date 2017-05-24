@@ -24,6 +24,7 @@ class Transaction: BaseEntity {
 		if let date = map["txConfirmDate"] as? Double {
 			self.transactionConfirmDate = Date(timeIntervalSince1970: date/1000.0)
 		}
+		self.fileId = map["fileId"] as? String ?? ""
 		self.status = map["confirmations"] as? Int ?? 0
 	}
 	

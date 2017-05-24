@@ -29,37 +29,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Confirm" translatesAutoresizingMaskIntoConstraints="NO" id="zzC-6b-XLt">
-                    <rect key="frame" x="0.0" y="8.5" width="18" height="16"/>
+                    <rect key="frame" x="0.0" y="9" width="18" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="E4w-Hi-kMP"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dot" translatesAutoresizingMaskIntoConstraints="NO" id="4Q9-0B-VPd">
-                    <rect key="frame" x="362" y="8.5" width="13" height="16"/>
+                    <rect key="frame" x="355" y="9" width="15" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="13" id="vXX-2u-rdg"/>
+                        <constraint firstAttribute="width" constant="15" id="vXX-2u-rdg"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Attachment" translatesAutoresizingMaskIntoConstraints="NO" id="KRM-iB-cRR">
-                    <rect key="frame" x="362" y="39.5" width="13" height="16"/>
+                    <rect key="frame" x="355" y="40" width="15" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="13" id="ATF-F2-zXH"/>
+                        <constraint firstAttribute="width" constant="15" id="ATF-F2-zXH"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-tI-a2Z">
-                    <rect key="frame" x="26" y="5" width="328" height="23.5"/>
+                    <rect key="frame" x="26" y="5" width="327" height="23.5"/>
                     <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIp-lb-nks">
-                    <rect key="frame" x="26" y="37.5" width="328" height="21"/>
+                    <rect key="frame" x="26" y="37.5" width="327" height="21"/>
                     <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSn-7A-1Yg">
-                    <rect key="frame" x="26" y="58.5" width="328" height="21"/>
+                    <rect key="frame" x="26" y="58.5" width="327" height="21"/>
                     <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -68,16 +68,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WSn-7A-1Yg" firstAttribute="top" secondItem="QIp-lb-nks" secondAttribute="bottom" id="5eu-oG-1aD"/>
-                <constraint firstAttribute="trailing" secondItem="4Q9-0B-VPd" secondAttribute="trailing" id="7Q4-F5-gfk"/>
+                <constraint firstAttribute="trailing" secondItem="4Q9-0B-VPd" secondAttribute="trailing" constant="5" id="7Q4-F5-gfk"/>
                 <constraint firstItem="QIp-lb-nks" firstAttribute="trailing" secondItem="WSn-7A-1Yg" secondAttribute="trailing" id="7yb-Y8-OeO"/>
                 <constraint firstItem="zzC-6b-XLt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DXR-Nz-CN2"/>
                 <constraint firstItem="W9r-tI-a2Z" firstAttribute="leading" secondItem="QIp-lb-nks" secondAttribute="leading" id="Fv3-W5-Om0"/>
                 <constraint firstItem="4Q9-0B-VPd" firstAttribute="trailing" secondItem="KRM-iB-cRR" secondAttribute="trailing" id="HJw-Fq-6kY"/>
-                <constraint firstItem="KRM-iB-cRR" firstAttribute="leading" secondItem="QIp-lb-nks" secondAttribute="trailing" constant="8" symbolic="YES" id="HSj-pm-RWJ"/>
+                <constraint firstItem="KRM-iB-cRR" firstAttribute="leading" secondItem="QIp-lb-nks" secondAttribute="trailing" constant="2" id="HSj-pm-RWJ"/>
                 <constraint firstItem="QIp-lb-nks" firstAttribute="centerY" secondItem="KRM-iB-cRR" secondAttribute="centerY" id="NOM-pG-f9n"/>
                 <constraint firstItem="W9r-tI-a2Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="S8V-jw-Qca"/>
                 <constraint firstItem="KRM-iB-cRR" firstAttribute="top" secondItem="4Q9-0B-VPd" secondAttribute="bottom" constant="15" id="SCs-bp-dE9"/>
-                <constraint firstItem="4Q9-0B-VPd" firstAttribute="leading" secondItem="W9r-tI-a2Z" secondAttribute="trailing" constant="8" symbolic="YES" id="T6z-or-rAL"/>
+                <constraint firstItem="4Q9-0B-VPd" firstAttribute="leading" secondItem="W9r-tI-a2Z" secondAttribute="trailing" constant="2" id="T6z-or-rAL"/>
                 <constraint firstItem="zzC-6b-XLt" firstAttribute="top" secondItem="4Q9-0B-VPd" secondAttribute="top" id="VGF-vb-auZ"/>
                 <constraint firstItem="4Q9-0B-VPd" firstAttribute="leading" secondItem="KRM-iB-cRR" secondAttribute="leading" id="ahu-Lv-Se6"/>
                 <constraint firstItem="QIp-lb-nks" firstAttribute="leading" secondItem="WSn-7A-1Yg" secondAttribute="leading" id="dbX-3h-dyk"/>
@@ -91,6 +91,6 @@
     <resources>
         <image name="Attachment" width="16" height="16"/>
         <image name="Confirm" width="16" height="16"/>
-        <image name="Dot" width="16" height="16"/>
+        <image name="Dot" width="7" height="7"/>
     </resources>
 </document>

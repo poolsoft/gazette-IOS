@@ -23,6 +23,10 @@ class ValidateViewController: UIViewController, ViewProtocol {
 		presenter?.entity = transaction
 		reload()
     }
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.navigationItem.title = "ValidTransaction".localized
+	}
 	func reload() {
 		transactionView.transactionEntity = transaction
 		qrCodeImage.image = presenter?.qrCode()

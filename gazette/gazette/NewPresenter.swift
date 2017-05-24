@@ -49,11 +49,19 @@ class NewPresenter: PresenterProtocol {
 		}
 		return localHash
 	}
-	func price() -> String {
-		return ""
+	func updateTxFee() {
+		RestHelper.request(.post, json: false, resultJson: false, command: "getTxFee", params: nil, onComplete: { data in
+			CurrentUser.txFee = Double(data as! String) ?? 0
+			self.vc.reload?()
+		}) { (_, _) in
+			
+		}
 	}
-	func credit() -> String {
-		return ""
+	func price() -> Double {		
+		return CurrentUser.txFee
+	}
+	func credit() -> Double {
+		return CurrentUser.credit
 	}
 	func desc() -> String {
 		return ""

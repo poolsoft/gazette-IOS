@@ -15,30 +15,14 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 	@IBOutlet weak var fullName: UILabel!
 	@IBOutlet weak var email: UILabel!
 	@IBOutlet weak var credit: UILabel!
-	@IBOutlet weak var profileImageTop: NSLayoutConstraint!
-	@IBOutlet weak var profileImageHeight: NSLayoutConstraint!
-	let imagePicker = ImagePickerUtil()
-	var defaultHeight: CGFloat = 0
-	var defaultTop: CGFloat = 0
+	
 	var presenter: ProfilePresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = ProfilePresenter(self)
-		presenter?.requestUpdate()
 		scrollView.delegate = self
-		imagePicker.onPicSaved = { (path) in
-			HUD.show(.progress)
-			self.presenter!.editProfile(name: CurrentUser.name, lastname: CurrentUser.lastname, passwordHash: CurrentUser.passwordHash, pic: URL(fileURLWithPath: path as! String), onComplete: { (data) in
-				HUD.flash(.success, delay: 0.5)
-				IOSUtil.postDelay({ 
-					self.profileImage.load.removeCache()
-					self.reload()
-				}, seconds: 0)
-				
-			}, onError: { (error, data) in
-				HUD.flash(.error, delay: 0.5)
-			})
-		}
+		
+		
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -47,10 +31,10 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		(self.tabBarController?.navigationItem as! CustomNavigationItem).clickedDelegate = self
 		reload()
 		profileImage.layer.cornerRadius = min(profileImage.frame.width, profileImage.frame.height)/2
-		profileImage.layer.borderColor = UIColor.red.cgColor
-		profileImage.layer.borderWidth = 1
-		defaultHeight = profileImageHeight.constant
-		defaultTop = profileImageTop.constant
+		profileImage.layer.borderColor = UIColor.white.cgColor
+		profileImage.layer.borderWidth = 2
+		presenter?.requestUpdate()
+		
 		
 	}
 	func reload() {
@@ -59,48 +43,39 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		}
 		fullName.text = presenter!.myName() + " " + presenter!.myLastname()
 		email.text = presenter!.myEmail()
-		credit.text = StringUtil.addSeparator(presenter!.myCredit() as NSNumber)
+		let creditNumber = StringUtil.addSeparator(presenter!.myCredit() as NSNumber)
+		let rial = "Rial".localized
+		let statement = creditNumber + rial
+		let creditText = NSMutableAttributedString(string: statement)
+		creditText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextTiny), range: (statement as NSString).range(of: statement))
+		creditText.addAttribute(NSFontAttributeName, value: AppFont.withSize(Dimensions.TextVeryTiny), range: (statement as NSString).range(of: rial))
+		credit.attributedText = creditText
 	}
-	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		var newheight = defaultHeight - scrollView.contentOffset.y
-		if newheight > defaultHeight {
-			newheight = defaultHeight
-		}
-		if newheight < defaultHeight/2 {
-			newheight = defaultHeight/2
-		}
-		profileImageHeight.constant = newheight
-		profileImage.layer.cornerRadius = newheight/2
-		profileImageTop.constant = defaultTop + (defaultHeight - newheight)
-		
-	}
+	
 	
 	@IBAction func onBuyCredit(_ sender: Any) {
 	}
 	@IBAction func onFeedback(_ sender: Any) {
-	}
-	@IBAction func onHelp(_ sender: Any) {
-	}
-	@IBAction func onAboutUs(_ sender: Any) {
-	}
-	@IBAction func onExit(_ sender: Any) {
-		IOSUtil.alertTwoChoice("AreYouSureExit".localized, controller: self, positiveAction: "Ok".localized, negativeAction: "Cancel".localized, positiveHandler: { (action) in
-			self.presenter?.logout()
-			let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-			let mainViewController = storyBoard.instantiateInitialViewController()
-			self.present(mainViewController!, animated: true, completion: nil)
-		}) { (action) in
-			
+		if let url = URL(string: "http://sabtshod.com/#/faq") {
+			UIApplication.shared.openURL(url)
 		}
 	}
+	@IBAction func onHelp(_ sender: Any) {
+		if let url = URL(string: "http://sabtshod.com/#/faq") {
+			UIApplication.shared.openURL(url)
+		}
+	}
+	@IBAction func onAboutUs(_ sender: Any) {
+		if let url = URL(string: "http://sabtshod.com/#/contact") {
+			UIApplication.shared.openURL(url)
+		}
+	}
+	
 	func submit() {
 		performSegue(withIdentifier: "EditSegue", sender: nil)
 	}
 	
-	@IBAction func onImageClicked(_ sender: UITapGestureRecognizer) {
-		imagePicker.showImagePickerOptions(self)
-		
-	}
+	
 	
 	
 }

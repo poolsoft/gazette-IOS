@@ -60,7 +60,9 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerDele
 		self.delegate = self
 		let view1 = self.storyboard?.instantiateViewController(withIdentifier: "view1")
 		let view2 = self.storyboard?.instantiateViewController(withIdentifier: "view2")
-		views = [view2!, view1!]
+		let view3 = self.storyboard?.instantiateViewController(withIdentifier: "view3")
+		let view4 = self.storyboard?.instantiateViewController(withIdentifier: "view4")
+		views = [view4!, view3!, view2!, view1!]
 		
 		tutorialDelegate?.tutorialPageViewController(self, didUpdatePageCount: views.count)
 		tutorialDelegate?.tutorialPageViewController(self, didUpdatePageIndex: views.count - 1)
