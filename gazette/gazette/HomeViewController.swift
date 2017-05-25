@@ -14,12 +14,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	@IBOutlet weak var tableView: UITableView!
 	
 	var presenter: HomePresenter?
+	var sharePresenter: SharePresenter?
 	var newPresenter: NewPresenter?
 	var searchController: UISearchController?
 	override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = HomePresenter(self)
 		newPresenter = NewPresenter(self)
+		sharePresenter = SharePresenter(self)
         tableView.delegate = self
 		tableView.dataSource = self
 		tableView.tableFooterView = UIView()
@@ -67,15 +69,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		let controller = SkypeActionController()
+		let controller = TweetbotActionController()
 		controller.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
 		controller.addAction(Action("CopyTx".localized, style: .default, handler: { (action) in
 			IOSUtil.copyToClipboard(self.presenter!.transactions![indexPath.row].transactionId)
 		}))
-		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
+		controller.addAction(Action("Detail".localized, style: .default, handler: { (action) in
 			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.transactions![indexPath.row])
 		}))
-		
+		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
+			self.sharePresenter?.entity = self.presenter!.transactions![indexPath.row]
+			let vc = UIActivityViewController(activityItems: [self.sharePresenter?.transactionId() ?? "", self.sharePresenter?.qrCode()!], applicationActivities: nil)
+			self.present(vc, animated: true, completion: nil)
+		}))
+		controller.addSection(Section())
 		controller.addAction(Action("Cancel".localized, style: .cancel, handler: { (action) in
 			
 		}))

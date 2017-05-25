@@ -8,7 +8,7 @@
 
 import UIKit
 import PKHUD
-class ValidateViewController: UIViewController, ViewProtocol {
+class ValidateViewController: UIViewController, ViewProtocol, NavClicked {
 	
 	
 	@IBOutlet weak var qrCodeImage: UIImageView!
@@ -26,12 +26,18 @@ class ValidateViewController: UIViewController, ViewProtocol {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationItem.title = "ValidTransaction".localized
+		(self.navigationItem as! CustomNavigationItem).showShare()
+		(self.navigationItem as! CustomNavigationItem).clickedDelegate = self
 	}
 	func reload() {
 		transactionView.transactionEntity = transaction
 		qrCodeImage.image = presenter?.qrCode()
 	}
-
+	func submit() {
+		self.presenter?.entity = transaction
+		let vc = UIActivityViewController(activityItems: [self.presenter?.transactionId() ?? "", self.presenter!.qrCode()!], applicationActivities: nil)
+		self.present(vc, animated: true, completion: nil)
+	}
     
 	
 }

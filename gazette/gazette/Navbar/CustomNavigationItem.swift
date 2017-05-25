@@ -16,17 +16,23 @@ class CustomNavigationItem: UINavigationItem {
 	let nextImage = UIImage(named: "Next")!
 	let editImage = UIImage(named: "Edit")!
 	let addImage = UIImage(named: "Add")!
+	let shareImage = UIImage(named: "Share")!
 	enum CustomNavMenuItems: Int {
 		case menu = 0
 		case next = 1
 		case edit = 2
 		case add = 3
+		case share = 4
 		case none = -1
 	}
 	
 	var nextItem: CustomNavMenuItems = .none
 	func showNext() {
 		nextItem = .next
+		prepareNextItem()
+	}
+	func showShare() {
+		nextItem = .share
 		prepareNextItem()
 	}
 	
@@ -61,6 +67,8 @@ class CustomNavigationItem: UINavigationItem {
 			(rightButton?.customView as? UIImageView)?.image = editImage
 		case .add:
 			(rightButton?.customView as? UIImageView)?.image = addImage
+		case .share:
+			(rightButton?.customView as? UIImageView)?.image = shareImage
 		
 		default:
 			(rightButton?.customView as? UIImageView)?.image = nil
