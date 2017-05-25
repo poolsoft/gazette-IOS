@@ -141,10 +141,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57y-9h-EoZ">
-                                <rect key="frame" x="46" y="500" width="283" height="30"/>
+                                <rect key="frame" x="46" y="500" width="283" height="40"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ceg-i6-xhK"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ceg-i6-xhK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <state key="normal" title="ثبت نام">
@@ -418,7 +418,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-B9-4D7">
-                                <rect key="frame" x="16" y="70" width="343" height="317.5"/>
+                                <rect key="frame" x="16" y="70" width="343" height="323.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eje-UZ-Vwv">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="16"/>
@@ -430,10 +430,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-jd-nv4">
-                                        <rect key="frame" x="0.0" y="101" width="343" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="101" width="343" height="222.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
-                                                <rect key="frame" x="10" y="10" width="323" height="196.5"/>
+                                                <rect key="frame" x="10" y="10" width="323" height="202.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
@@ -475,8 +475,11 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
-                                                        <rect key="frame" x="0.0" y="120" width="323" height="34"/>
+                                                        <rect key="frame" x="0.0" y="120" width="323" height="40"/>
                                                         <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Rty-9T-zWQ"/>
+                                                        </constraints>
                                                         <state key="normal" title="عضویت">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -490,7 +493,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
-                                                        <rect key="frame" x="0.0" y="164" width="323" height="32.5"/>
+                                                        <rect key="frame" x="0.0" y="170" width="323" height="32.5"/>
                                                         <state key="normal">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="قبلا ثبت نام کرده‌ام.">
@@ -602,7 +605,7 @@
         <scene sceneID="WEc-Lx-KzQ">
             <objects>
                 <navigationController id="fun-wT-XEc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dwR-uO-Vxi" customClass="CustomNavBar" customModule="gazette" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -917,8 +920,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-2z-xXI">
-                                <rect key="frame" x="16" y="441" width="343" height="37"/>
+                                <rect key="frame" x="16" y="441" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1IC-tj-Nz1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <state key="normal" title="تأیید">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1073,10 +1079,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-Lc-0RF">
-                                <rect key="frame" x="12" y="491" width="351" height="30"/>
+                                <rect key="frame" x="12" y="491" width="351" height="40"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bUR-Uy-oAb"/>
+                                    <constraint firstAttribute="height" constant="40" id="u8x-m4-YDj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <state key="normal" title="تأیید">
