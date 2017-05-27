@@ -13,7 +13,7 @@ class Dao<T: BaseEntity> {
 	
 	static func setup() {
 		let config = Realm.Configuration(
-			schemaVersion: 3,
+			schemaVersion: 4,
 			migrationBlock: { migration, oldSchemaVersion in
 				migration.deleteData(forType: "Transaction")
 

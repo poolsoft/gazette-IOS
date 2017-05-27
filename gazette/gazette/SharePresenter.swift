@@ -11,6 +11,7 @@ import QRCode
 class SharePresenter: PresenterProtocol {
 	let vc: ViewProtocol
 	var entity: Transaction!
+	let transactionDao = TransactionDao()
 	required init(_ vc: ViewProtocol) {
 		self.vc = vc
 	}
@@ -23,6 +24,25 @@ class SharePresenter: PresenterProtocol {
 	}
 	func transactionId() -> String {
 		return entity.transactionId
+	}
+	func mediaId() -> String {
+		return entity.fileId
+	}
+	func fileAddress() -> String {
+		return entity.fileAddress
+	}
+	func shouldDownload() -> Bool {
+		return !entity.fileId.isEmpty && !shouldOpen()
+	}
+	func shouldOpen() -> Bool {
+		return !entity.fileAddress.isEmpty && FileHandle(forReadingAtPath: entity.fileAddress) != nil
+	}
+	func setDownloadPath(url: URL) {
+		transactionDao.save { () -> Transaction in
+			self.entity.fileAddress = url.path
+			return self.entity
+		}
+		vc.reload?()
 	}
 	func timeStamp() -> String {
 		if entity.transactionDate != nil {

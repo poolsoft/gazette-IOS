@@ -418,25 +418,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-B9-4D7">
-                                <rect key="frame" x="16" y="70" width="343" height="323.5"/>
+                                <rect key="frame" x="16" y="70" width="343" height="318.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eje-UZ-Vwv">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="16"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ثبت شد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-3g-qxu">
-                                        <rect key="frame" x="0.0" y="46" width="343" height="25"/>
+                                        <rect key="frame" x="0.0" y="46" width="343" height="20"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-jd-nv4">
-                                        <rect key="frame" x="0.0" y="101" width="343" height="222.5"/>
+                                        <rect key="frame" x="0.0" y="96" width="343" height="222.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-KZ-Ri4">
                                                 <rect key="frame" x="10" y="10" width="323" height="202.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEi-gH-ESB" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -449,7 +449,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adM-yV-hgK" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="40" width="323" height="30"/>
+                                                        <rect key="frame" x="0.0" y="44" width="323" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -462,7 +462,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOE-9J-2WM" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="gazette" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="80" width="323" height="30"/>
+                                                        <rect key="frame" x="0.0" y="84" width="323" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -475,7 +475,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-FM-dxf">
-                                                        <rect key="frame" x="0.0" y="120" width="323" height="40"/>
+                                                        <rect key="frame" x="0.0" y="124" width="323" height="40"/>
                                                         <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Rty-9T-zWQ"/>
@@ -493,7 +493,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-rG-3cf">
-                                                        <rect key="frame" x="0.0" y="170" width="323" height="32.5"/>
+                                                        <rect key="frame" x="0.0" y="174" width="323" height="28.5"/>
                                                         <state key="normal">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="قبلا ثبت نام کرده‌ام.">
@@ -920,7 +920,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C5-2z-xXI">
-                                <rect key="frame" x="16" y="441" width="343" height="40"/>
+                                <rect key="frame" x="16" y="436" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1IC-tj-Nz1"/>
@@ -939,7 +939,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-a8-F4q">
-                                <rect key="frame" x="16" y="234" width="343" height="197"/>
+                                <rect key="frame" x="16" y="234" width="343" height="192"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sY-gL-6Bm" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -962,7 +962,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBo-Mw-Rq8">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="37"/>
+                                        <rect key="frame" x="0.0" y="80" width="343" height="32"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <state key="normal" title="برای تغییر رمز عبور اینجا را کلیک کنید">
                                             <color key="titleColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -972,7 +972,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAZ-JV-vf8" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="127" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="122" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -982,7 +982,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-4D-JJi" customClass="SkyFloatingLabelTextField" customModule="gazette" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="167" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="162" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1079,7 +1079,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-Lc-0RF">
-                                <rect key="frame" x="12" y="491" width="351" height="40"/>
+                                <rect key="frame" x="12" y="477" width="351" height="40"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="u8x-m4-YDj"/>
@@ -1098,7 +1098,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قیمت:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8A-DP-fGf">
-                                <rect key="frame" x="315" y="407" width="50" height="21"/>
+                                <rect key="frame" x="315" y="402" width="50" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="qEH-9a-vaV"/>
                                 </constraints>
@@ -1107,7 +1107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-Zn-FW1">
-                                <rect key="frame" x="235.5" y="406" width="39.5" height="23.5"/>
+                                <rect key="frame" x="235.5" y="401" width="39.5" height="19"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="Iop-QA-MbZ"/>
@@ -1122,7 +1122,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-b1-SLb">
-                                <rect key="frame" x="235.5" y="448" width="39.5" height="23.5"/>
+                                <rect key="frame" x="235.5" y="438.5" width="39.5" height="19"/>
                                 <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="6ou-HS-IUc"/>
@@ -1137,7 +1137,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مبلغ اعتبار:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-AE-SU4">
-                                <rect key="frame" x="295" y="449" width="70" height="21"/>
+                                <rect key="frame" x="295" y="439.5" width="70" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="KVL-Pm-OxP"/>
                                 </constraints>
@@ -1146,11 +1146,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="txB-l0-jwo">
-                                <rect key="frame" x="26" y="374" width="51" height="31"/>
+                                <rect key="frame" x="26" y="371.5" width="51" height="31"/>
                                 <color key="onTintColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در سرور داخلی ذخیره شود" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-hD-0Kt">
-                                <rect key="frame" x="85" y="377" width="280" height="25"/>
+                                <rect key="frame" x="85" y="377" width="280" height="20"/>
                                 <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1159,7 +1159,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjA-ib-ayK">
-                                        <rect key="frame" x="167" y="88" width="42" height="25"/>
+                                        <rect key="frame" x="167" y="90.5" width="42" height="20"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="17"/>
                                         <color key="textColor" red="0.20459232233502533" green="0.20459232233502533" blue="0.20459232233502533" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1186,7 +1186,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwf-X1-huN">
-                                        <rect key="frame" x="8" y="26" width="337" height="21"/>
+                                        <rect key="frame" x="8" y="30.5" width="337" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Gandom" family="Gandom" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1210,7 +1210,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3D9-tB-rKZ">
-                                <rect key="frame" x="12" y="438" width="351" height="1"/>
+                                <rect key="frame" x="12" y="428.5" width="351" height="1"/>
                                 <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="KCY-q8-0P5"/>
@@ -1225,7 +1225,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AL-bf-rgy">
-                                <rect key="frame" x="12" y="480" width="351" height="1"/>
+                                <rect key="frame" x="12" y="466" width="351" height="1"/>
                                 <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dfL-e8-E2o"/>
@@ -1396,19 +1396,41 @@
                                     <constraint firstAttribute="height" constant="70" id="SxJ-yu-Nyr"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-YX-pbJ">
+                                <rect key="frame" x="16" y="444" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.15123009679999999" green="0.37427103519999999" blue="0.98801738019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q1E-Ku-hnG"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onDownloadButtonClicked:" destination="OOy-Cm-onH" eventType="touchUpInside" id="Rkx-tJ-UId"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FBC-sV-gfm" firstAttribute="leading" secondItem="dTb-h1-TdK" secondAttribute="leading" id="1be-TV-sZV"/>
                             <constraint firstItem="FBC-sV-gfm" firstAttribute="leading" secondItem="mCo-sr-ea7" secondAttribute="leading" id="JcH-f5-9sD"/>
+                            <constraint firstItem="Xkc-YX-pbJ" firstAttribute="leading" secondItem="mCo-sr-ea7" secondAttribute="leadingMargin" id="TwJ-1r-JqY"/>
                             <constraint firstAttribute="trailing" secondItem="FBC-sV-gfm" secondAttribute="trailing" id="ito-Vc-kKA"/>
                             <constraint firstItem="dTb-h1-TdK" firstAttribute="top" secondItem="FBC-sV-gfm" secondAttribute="bottom" id="ofS-xB-Rim"/>
+                            <constraint firstItem="Xkc-YX-pbJ" firstAttribute="top" secondItem="dTb-h1-TdK" secondAttribute="bottom" constant="10" id="pQ1-v4-33y"/>
                             <constraint firstItem="FBC-sV-gfm" firstAttribute="trailing" secondItem="dTb-h1-TdK" secondAttribute="trailing" id="qN1-Mi-Xa3"/>
+                            <constraint firstItem="Xkc-YX-pbJ" firstAttribute="trailing" secondItem="mCo-sr-ea7" secondAttribute="trailingMargin" id="sFZ-fA-g3j"/>
                             <constraint firstItem="FBC-sV-gfm" firstAttribute="top" secondItem="MAv-eh-EJ1" secondAttribute="bottom" id="wSP-jV-i4Q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hnR-NP-LN1" customClass="CustomNavigationItem" customModule="gazette" customModuleProvider="target"/>
                     <connections>
+                        <outlet property="downloadButton" destination="Xkc-YX-pbJ" id="Tjw-9B-lFu"/>
                         <outlet property="qrCodeImage" destination="iJ6-ep-04S" id="WFI-kB-KzU"/>
                         <outlet property="transactionView" destination="dTb-h1-TdK" id="MFa-iT-9gn"/>
                     </connections>

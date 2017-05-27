@@ -65,28 +65,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //		let bgColorView = UIView()
 //		bgColorView.backgroundColor = ColorPalette.Primary
 //		cell.selectedBackgroundView = bgColorView
+		cell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(_:))))
 		return cell
+	}
+	func longPress(_ gesture: UILongPressGestureRecognizer) {
+		let location = gesture.location(in: self.tableView)
+		if let indexPath = self.tableView.indexPathForRow(at: location) {
+			
+			let controller = TweetbotActionController()
+			controller.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
+			controller.addAction(Action("CopyTx".localized, style: .default, handler: { (action) in
+				IOSUtil.copyToClipboard(self.presenter!.transactions![indexPath.row].transactionId)
+			}))
+			
+			controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
+				self.sharePresenter?.entity = self.presenter!.transactions![indexPath.row]
+				let vc = UIActivityViewController(activityItems: [self.sharePresenter!.link(), self.sharePresenter!.qrCode()!], applicationActivities: nil)
+				self.present(vc, animated: true, completion: nil)
+			}))
+			controller.addSection(Section())
+			controller.addAction(Action("Cancel".localized, style: .cancel, handler: { (action) in
+				
+			}))
+			present(controller, animated: true, completion: nil)
+			
+		}
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		let controller = TweetbotActionController()
-		controller.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
-		controller.addAction(Action("CopyTx".localized, style: .default, handler: { (action) in
-			IOSUtil.copyToClipboard(self.presenter!.transactions![indexPath.row].transactionId)
-		}))
-		controller.addAction(Action("Detail".localized, style: .default, handler: { (action) in
 			self.performSegue(withIdentifier: "ShareSegue", sender: self.presenter!.transactions![indexPath.row])
-		}))
-		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
-			self.sharePresenter?.entity = self.presenter!.transactions![indexPath.row]
-			let vc = UIActivityViewController(activityItems: [self.sharePresenter?.link() ?? "", self.sharePresenter?.qrCode()!], applicationActivities: nil)
-			self.present(vc, animated: true, completion: nil)
-		}))
-		controller.addSection(Section())
-		controller.addAction(Action("Cancel".localized, style: .cancel, handler: { (action) in
-			
-		}))
-		present(controller, animated: true, completion: nil)
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

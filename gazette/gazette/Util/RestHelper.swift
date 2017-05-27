@@ -108,10 +108,10 @@ class RestHelper {
 	}
 	static func download(_ mediaId: String, onProgress: ((Int) -> Void)?, onComplete: @escaping (URL?)->(Void), onError: @escaping (Void) -> (Void)) {
 		var fileUrl: URL?
-		let url = URL(string: Constants.SERVER_ADDRESS + "download?token=" + CurrentUser.token + "&id=" + mediaId)!
+		let url = URL(string: Constants.SERVER_ADDRESS + "downloadTnxFile/" + CurrentUser.token + "&" + mediaId)!
 		manager.session.configuration.timeoutIntervalForRequest = 120
 		manager.download(url) { (url: URL, response: HTTPURLResponse) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
-			let fileName = response.allHeaderFields["fileName"] as? String ?? NSUUID().uuidString
+			let fileName = response.suggestedFilename ?? NSUUID().uuidString
 			let pathComponent = IOSUtil.getCache("downloads", String(NSDate().timeIntervalSince1970) + "_" + fileName)
 			fileUrl = URL(fileURLWithPath: pathComponent)
 			return (fileUrl!, DownloadRequest.DownloadOptions.removePreviousFile)

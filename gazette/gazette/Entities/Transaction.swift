@@ -13,6 +13,7 @@ class Transaction: BaseEntity {
 	dynamic var transactionDate: Date? = nil
 	dynamic var transactionConfirmDate: Date? = nil
 	dynamic var fileId: String = ""
+	dynamic var fileAddress: String = ""
 	dynamic var status: Int = 0 // 0 -> Pending, 1 -> Confirmed
 	
 	func update(_ map: [String: Any]) {
