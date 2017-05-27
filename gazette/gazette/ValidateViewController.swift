@@ -17,6 +17,7 @@ class ValidateViewController: UIViewController, ViewProtocol, NavClicked {
 	
 	var transaction: Transaction!
 	var presenter: SharePresenter?
+	var detailMode = false
     override func viewDidLoad() {
         super.viewDidLoad()
 		presenter = SharePresenter(self)
@@ -25,7 +26,7 @@ class ValidateViewController: UIViewController, ViewProtocol, NavClicked {
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationItem.title = "ValidTransaction".localized
+		self.navigationItem.title = detailMode ? "Detail".localized : "ValidTransaction".localized
 		(self.navigationItem as! CustomNavigationItem).showShare()
 		(self.navigationItem as! CustomNavigationItem).clickedDelegate = self
 	}
@@ -35,7 +36,7 @@ class ValidateViewController: UIViewController, ViewProtocol, NavClicked {
 	}
 	func submit() {
 		self.presenter?.entity = transaction
-		let vc = UIActivityViewController(activityItems: [self.presenter?.transactionId() ?? "", self.presenter!.qrCode()!], applicationActivities: nil)
+		let vc = UIActivityViewController(activityItems: [self.presenter?.link() ?? "", self.presenter!.qrCode()!], applicationActivities: nil)
 		self.present(vc, animated: true, completion: nil)
 	}
     

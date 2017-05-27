@@ -79,7 +79,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		}))
 		controller.addAction(Action("Share".localized, style: .default, handler: { (action) in
 			self.sharePresenter?.entity = self.presenter!.transactions![indexPath.row]
-			let vc = UIActivityViewController(activityItems: [self.sharePresenter?.transactionId() ?? "", self.sharePresenter?.qrCode()!], applicationActivities: nil)
+			let vc = UIActivityViewController(activityItems: [self.sharePresenter?.link() ?? "", self.sharePresenter?.qrCode()!], applicationActivities: nil)
 			self.present(vc, animated: true, completion: nil)
 		}))
 		controller.addSection(Section())
@@ -93,6 +93,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if segue.identifier == "ShareSegue" {
 			let controller = segue.destination as! ValidateViewController
 			controller.transaction = sender as! Transaction
+			controller.detailMode = true
 		}
 	}
 }

@@ -61,7 +61,7 @@ class ProfileViewController: UIViewController, ViewProtocol, NavClicked, UIScrol
 		}
 	}
 	@IBAction func onHelp(_ sender: Any) {
-		if let url = URL(string: "http://sabtshod.com/#/faq") {
+		if let url = URL(string: "http://sabtshod.com/#/help") {
 			UIApplication.shared.openURL(url)
 		}
 	}
